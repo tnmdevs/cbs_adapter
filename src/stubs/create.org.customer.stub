@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bcs:CreateCustomerRequestMsg>
+         <RequestHeader>
+              <cbs:Version>1</cbs:Version>
+              <cbs:BusinessCode>1</cbs:BusinessCode>
+              <cbs:MessageSeq>{{trans_id}}</cbs:MessageSeq>
+              <cbs:OwnershipInfo>
+                 <cbs:BEID>101</cbs:BEID>
+              </cbs:OwnershipInfo>
+              <cbs:AccessSecurity>
+                 <cbs:LoginSystemCode>{{username}}</cbs:LoginSystemCode>
+                 <cbs:Password>{{password}}</cbs:Password>
+              </cbs:AccessSecurity>
+              <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+           </RequestHeader>
+         <CreateCustomerRequest>
+            <bcs:RegisterCustKey>{{register_customer_key}}</bcs:RegisterCustKey>
+            <bcs:Customer>
+               <bcs:CustKey>{{customer_key}}</bcs:CustKey>
+               <bcs:CustInfo>
+                  <bcc:CustType>{{customer_type}}</bcc:CustType>
+                  <bcc:CustCode>{{customer_code}}</bcc:CustCode>
+                  <bcc:CustBasicInfo>
+                     <bcc:DunningFlag>1</bcc:DunningFlag>
+                  </bcc:CustBasicInfo>
+                  <bcc:NoticeSuppress>
+                    <!-- Either allow or disable -->
+                     <bcc:ChannelType>S</bcc:ChannelType>
+                     <bcc:NoticeType>C_ALLOW_NOTIFICATION</bcc:NoticeType>
+                  </bcc:NoticeSuppress>
+                  <bcc:NoticeSuppress>
+
+                     <bcc:ChannelType>M</bcc:ChannelType>
+                     <bcc:NoticeType>C_ALLOW_NOTIFICATION</bcc:NoticeType>
+                  </bcc:NoticeSuppress>
+                  <bcc:NoticeSuppress>
+
+                     <bcc:ChannelType>V</bcc:ChannelType>
+                     <bcc:NoticeType>C_ALLOW_NOTIFICATION</bcc:NoticeType>
+                  </bcc:NoticeSuppress>
+               </bcs:CustInfo>
+               <bcs:OrgInfo>
+                  <bcc:IDType>{{id_type}}</bcc:IDType>
+                  <bcc:IDNumber>{{id_number}}</bcc:IDNumber>
+                  <bcc:IDValidity>{{id_validity}}</bcc:IDValidity>
+                  <bcc:OrgName>{{org_name}}</bcc:OrgName>
+
+                  <bcc:OrgAddressKey>{{address_key}}</bcc:OrgAddressKey>
+
+                  <bcc:OrgSize>{{size}}</bcc:OrgSize>
+                  <!--Optional:-->
+                  <bcc:Industry>{{industry}}<bcc:Industry/>
+                  <!--Optional:-->
+                  <bcc:SubIndustry>{{sub_industry}}<bcc:SubIndustry/>
+                  <!--Optional:-->
+                  <bcc:OrgPhoneNumber>{{phone_number}}<bcc:OrgPhoneNumber/>
+                  <!--Optional:-->
+                  <bcc:OrgFaxNumber>{{fax}} <bcc:OrgFaxNumber/>
+                  <!--Optional:-->
+                  <bcc:OrgEmail>{{email}}<bcc:OrgEmail/>
+                  <!--Optional:-->
+                  <bcc:OrgWebSite>{{website}}<bcc:OrgWebSite/>
+                  <!--Zero or more repetitions:-->
+
+               </bcs:OrgInfo>
+            </bcs:Customer>
+            <bcs:AddressInfo>
+             <bcc:AddressKey>{{address_key}}</bcc:AddressKey>
+             <bcc:Address1>{{address1}}</bcc:Address1>
+             <bcc:Address2>{{address2}}</bcc:Address2>
+             <bcc:Address3>{{address3}}</bcc:Address3>
+             <bcc:Address4>{{address4}}</bcc:Address4>
+             <bcc:PostCode>{{post_code}}</bcc:PostCode>
+           </bcs:AddressInfo>
+         </CreateCustomerRequest>
+      </bcs:CreateCustomerRequestMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

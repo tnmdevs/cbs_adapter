@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bcs:CreateCustomerRequestMsg>
+         <RequestHeader>
+             <cbs:Version>1</cbs:Version>
+             <cbs:BusinessCode>1</cbs:BusinessCode>
+             <cbs:MessageSeq>{{trans_id}}</cbs:MessageSeq>
+             <cbs:OwnershipInfo>
+                <cbs:BEID>101</cbs:BEID>
+             </cbs:OwnershipInfo>
+             <cbs:AccessSecurity>
+                <cbs:LoginSystemCode>{{username}}</cbs:LoginSystemCode>
+                <cbs:Password>{{password}}</cbs:Password>
+             </cbs:AccessSecurity>
+             <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+          </RequestHeader>
+         <CreateCustomerRequest>
+            <bcs:RegisterCustKey>{{register_customer_key}}</bcs:RegisterCustKey>
+            <bcs:Customer>
+               <bcs:CustKey>{{customer_key}}</bcs:CustKey>
+               <bcs:CustInfo>
+                  <bcc:CustType>{{customer_type}}</bcc:CustType>
+                  <bcc:CustCode>{{customer_code}}</bcc:CustCode>
+                  <bcc:CustBasicInfo>
+                  <!-- Dumming Flag. All options need to be supported -->
+                     <bcc:DunningFlag>1</bcc:DunningFlag>
+                  </bcc:CustBasicInfo>
+                  <bcc:NoticeSuppress>
+                    <!-- Either allow or disable -->
+                     <bcc:ChannelType>S</bcc:ChannelType>
+                     <bcc:NoticeType>C_ALLOW_NOTIFICATION</bcc:NoticeType>
+                  </bcc:NoticeSuppress>
+                  <bcc:NoticeSuppress>
+
+                     <bcc:ChannelType>M</bcc:ChannelType>
+                     <bcc:NoticeType>C_ALLOW_NOTIFICATION</bcc:NoticeType>
+                  </bcc:NoticeSuppress>
+                  <bcc:NoticeSuppress>
+
+                     <bcc:ChannelType>V</bcc:ChannelType>
+                     <bcc:NoticeType>C_ALLOW_NOTIFICATION</bcc:NoticeType>
+                  </bcc:NoticeSuppress>
+               </bcs:CustInfo>
+               <bcs:IndividualInfo>
+                  <bcc:IDType>{{id_type}}</bcc:IDType>
+                  <bcc:IDNumber>{{id_number}}</bcc:IDNumber>
+                  <bcc:Title>{{title}}</bcc:Title>
+                  <bcc:FirstName>{{first_name}}</bcc:FirstName>
+                  <bcc:MiddleName>{{middle_name}}<bcc:MiddleName/>
+                  <bcc:LastName>{{last_name}}</bcc:LastName>
+                  <bcc:HomeAddressKey>{{home_address_key}}</bcc:HomeAddressKey>
+                  <bcc:Gender>{{gender}}</bcc:Gender>
+                  <bcc:Nationality>{{nationality}}</bcc:Nationality>
+                  <bcc:Birthday>{{birthday}}</bcc:Birthday>
+                  <bcc:MaritalStatus>{{marital_status}}</bcc:MaritalStatus>
+                  <!--Optional:-->
+                  <bcc:Education>{{education}}<bcc:Education/>
+                  <!--Optional:-->
+                  <bcc:Occupation>{{occupation}}<bcc:Occupation/>
+                  <!--Optional:-->
+                  <bcc:Salary>{{salary}}<bcc:Salary/>
+                  <!--Optional:-->
+                  <bcc:OfficePhone>{{office_phone}}<bcc:OfficePhone/>
+                  <!--Optional:-->
+                  <bcc:HomePhone>{{home_phone}}<bcc:HomePhone/>
+                  <!--Optional:-->
+
+                  <bcc:MobilePhone>{{mobile_phone}}</bcc:MobilePhone>
+                  <bcc:Fax>{{fax}}<bcc:Fax/>
+                  <bcc:Email>{{email}}</bcc:Email>
+
+               </bcs:IndividualInfo>
+            </bcs:Customer>
+            <bcs:AddressInfo>
+                 <bcc:AddressKey>{{address_key}}</bcc:AddressKey>
+                 <bcc:Address1>{{address1}}</bcc:Address1>
+                 <bcc:Address2>{{address2}}</bcc:Address2>
+                 <bcc:Address3>{{address3}}</bcc:Address3>
+                 <bcc:Address4>{{address4}}</bcc:Address4>
+                 <bcc:PostCode>{{post_code}}</bcc:PostCode>
+               </bcs:AddressInfo>
+         </CreateCustomerRequest>
+      </bcs:CreateCustomerRequestMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

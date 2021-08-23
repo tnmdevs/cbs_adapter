@@ -1,0 +1,26 @@
+<?php
+
+
+namespace TNM\CBS\Services\CustomerCreation;
+
+
+use TNM\CBS\Services\CbsService;
+
+class IndividualCustomerCreationService extends CbsService implements ICustomerCreationService
+{
+
+    protected function getRequestStubPath(): string
+    {
+        return 'stubs/create.individual.customer.stub';
+    }
+
+    protected function getResponseNamespace(): string
+    {
+        return 'CreateCustomerRequestMsg';
+    }
+
+    protected function getRequestEndpoint(): string
+    {
+        return 'services/BcServices';
+    }
+}

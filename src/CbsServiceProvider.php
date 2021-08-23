@@ -11,7 +11,15 @@ use TNM\CBS\Services\BundleSharing\ModifyBundleSharingRelationship\IModifyBundle
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingChildren\IQueryBundleSharingChildrenService;
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingParents\IQueryBundleSharingParentsService;
 use TNM\CBS\Services\BundleSubscription\IBundleSubscriptionService;
+use TNM\CBS\Services\CustomerCreation\IIndividualCustomerCreationService;
+use TNM\CBS\Services\CustomerCreation\IndividualCustomerCreationService;
+use TNM\CBS\Services\CustomerCreation\IOrgCustomerCreationService;
+use TNM\CBS\Services\CustomerCreation\OrgCustomerCreationService;
 use TNM\CBS\Services\CustomerInfo\ICustomerInfoService;
+use TNM\CBS\Services\CustomerUpdate\IIndividualCustomerUpdateService;
+use TNM\CBS\Services\CustomerUpdate\IndividualCustomerUpdateService;
+use TNM\CBS\Services\CustomerUpdate\IOrgCustomerUpdateService;
+use TNM\CBS\Services\CustomerUpdate\OrgCustomerUpdateService;
 use TNM\CBS\Services\LoanInfo\ILoanInfoService;
 use TNM\CBS\Services\Me2U\IMe2UService;
 use TNM\CBS\Services\OneOffDeduction\IOneOffDeductionService;
@@ -58,5 +66,9 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(IQueryBundleSharingChildrenService::class, QueryBundleSharingChildrenService::class);
         $this->app->bind(IQueryBundleSharingParentsService::class, QueryBundleSharingParentsService::class);
         $this->app->bind(IAvailableOffersService::class, AvailableOffersService::class);
+        $this->app->bind(IIndividualCustomerCreationService::class,IndividualCustomerCreationService::class);
+        $this->app->bind(IOrgCustomerCreationService::class,OrgCustomerCreationService::class);
+        $this->app->bind(IOrgCustomerUpdateService::class,OrgCustomerUpdateService::class);
+        $this->app->bind(IIndividualCustomerUpdateService::class,IndividualCustomerUpdateService::class);
     }
 }

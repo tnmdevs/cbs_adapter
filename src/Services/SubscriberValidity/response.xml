@@ -1,0 +1,43 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <bcs:ChangeSubValidityResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+         <ResultHeader>
+            <cbs:Version>1</cbs:Version>
+            <cbs:ResultCode>0</cbs:ResultCode>
+            <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+            <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+         </ResultHeader>
+         <ChangeSubValidityResult>
+            <bcs:LifeCycleChgInfo>
+               <bcs:CurrentLifeCycleIndex>2</bcs:CurrentLifeCycleIndex>
+               <bcs:NewLifeCycleStatus>
+                  <bcs:StatusName>Idle</bcs:StatusName>
+                  <bcs:StatusExpireTime>19700101000000</bcs:StatusExpireTime>
+                  <bcs:StatusIndex>1</bcs:StatusIndex>
+               </bcs:NewLifeCycleStatus>
+               <bcs:NewLifeCycleStatus>
+                  <bcs:StatusName>Active</bcs:StatusName>
+                  <bcs:StatusExpireTime>20210813215959</bcs:StatusExpireTime>
+                  <bcs:StatusIndex>2</bcs:StatusIndex>
+               </bcs:NewLifeCycleStatus>
+               <bcs:NewLifeCycleStatus>
+                  <bcs:StatusName>Call Barring</bcs:StatusName>
+                  <bcs:StatusExpireTime>20211211215959</bcs:StatusExpireTime>
+                  <bcs:StatusIndex>3</bcs:StatusIndex>
+               </bcs:NewLifeCycleStatus>
+               <bcs:NewLifeCycleStatus>
+                  <bcs:StatusName>Suspend</bcs:StatusName>
+                  <bcs:StatusExpireTime>20220110215959</bcs:StatusExpireTime>
+                  <bcs:StatusIndex>4</bcs:StatusIndex>
+               </bcs:NewLifeCycleStatus>
+               <bcs:NewLifeCycleStatus>
+                  <bcs:StatusName>Pool</bcs:StatusName>
+                  <bcs:StatusExpireTime>19700101000000</bcs:StatusExpireTime>
+                  <bcs:StatusIndex>8</bcs:StatusIndex>
+               </bcs:NewLifeCycleStatus>
+               <bcs:ChgValidity>20</bcs:ChgValidity>
+            </bcs:LifeCycleChgInfo>
+         </ChangeSubValidityResult>
+      </bcs:ChangeSubValidityResultMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

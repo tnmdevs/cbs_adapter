@@ -1,0 +1,46 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+   <soapenv:Header/>
+   <soapenv:Body>
+
+      <bcs:ChangeRscRelationRequestMsg>
+         <RequestHeader>
+            <cbs:Version>1</cbs:Version>
+            <cbs:BusinessCode>1</cbs:BusinessCode>
+            <cbs:MessageSeq>{{trans_id}}</cbs:MessageSeq>
+            <cbs:OwnershipInfo>
+               <cbs:BEID>101</cbs:BEID>
+            </cbs:OwnershipInfo>
+            <cbs:AccessSecurity>
+               <cbs:LoginSystemCode>{{username}}</cbs:LoginSystemCode>
+               <cbs:Password>{{password}}</cbs:Password>
+            </cbs:AccessSecurity>
+
+            <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+         </RequestHeader>
+         <ChangeRscRelationRequest>
+            <bcs:SubAccessCode>
+               <bcc:PrimaryIdentity>{{msisdn}}</bcc:PrimaryIdentity>
+            </bcs:SubAccessCode>
+            <bcs:RscRelation>
+               <bcs:AddRelation>
+                  <bcc:RelationObjType>S</bcc:RelationObjType>
+                  <bcc:RelationDestIdentify>
+                     <bcc:SubIdentify>
+                        <bcc:PrimaryIdentity>{{beneficiary}}</bcc:PrimaryIdentity>
+                     </bcc:SubIdentify>
+                  </bcc:RelationDestIdentify>
+                  <bcc:FreeUnitType>{{account_type}}</bcc:FreeUnitType>
+                  <bcc:ShareLimit>
+                     <bcc:LimitCycleType>M</bcc:LimitCycleType>
+                     <bcc:LimitValue>{{limit_value}}</bcc:LimitValue>
+                     <bcc:MeasureUnit>1108</bcc:MeasureUnit>
+                  </bcc:ShareLimit>
+                  <bcc:StartTime>{{start_time}}</bcc:StartTime>
+                  <bcc:EndTime>{{end_time}}</bcc:EndTime>
+                  <bcc:Priority>100</bcc:Priority>
+               </bcs:AddRelation>
+            </bcs:RscRelation>
+         </ChangeRscRelationRequest>
+      </bcs:ChangeRscRelationRequestMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

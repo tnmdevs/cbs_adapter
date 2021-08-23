@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <bcs:FeeDeductionResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+         <ResultHeader>
+            <cbs:Version>1</cbs:Version>
+            <cbs:ResultCode>0</cbs:ResultCode>
+            <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+            <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+         </ResultHeader>
+         <FeeDeductionResult>
+            <bcs:DeductSerialNo>SAPOTA238</bcs:DeductSerialNo>
+            <bcs:AcctBalanceChangeList>
+               <bcs:AcctKey>101000001583243</bcs:AcctKey>
+               <bcs:BalanceChgInfo>
+                  <bcc:BalanceType>C_MAIN_ACCOUNT</bcc:BalanceType>
+                  <bcc:BalanceID>189000000000002008</bcc:BalanceID>
+                  <bcc:BalanceTypeName>PPS_MainAccount</bcc:BalanceTypeName>
+                  <bcc:OldBalanceAmt>19010</bcc:OldBalanceAmt>
+                  <bcc:NewBalanceAmt>19009</bcc:NewBalanceAmt>
+                  <bcc:CurrencyID>1102</bcc:CurrencyID>
+               </bcs:BalanceChgInfo>
+            </bcs:AcctBalanceChangeList>
+         </FeeDeductionResult>
+      </bcs:FeeDeductionResultMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bcs:ChangeRscRelationResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
+                                        xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+        </bcs:ChangeRscRelationResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

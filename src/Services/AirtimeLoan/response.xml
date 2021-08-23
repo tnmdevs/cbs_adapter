@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <ars:LoanResultMsg xmlns:ars="http://www.huawei.com/bme/cbsinterface/arservices"
+                           xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+            <LoanResult>
+                <ars:LoanAmount>200000</ars:LoanAmount>
+                <ars:LoanBalanceAmount>200000</ars:LoanBalanceAmount>
+                <ars:RepayAmount>205500</ars:RepayAmount>
+                <ars:ETUGracePeriod>30</ars:ETUGracePeriod>
+                <ars:GracePeriod>0</ars:GracePeriod>
+                <ars:LoanInterestAmt>5500</ars:LoanInterestAmt>
+                <ars:LoanAcctType>1043</ars:LoanAcctType>
+            </LoanResult>
+        </ars:LoanResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

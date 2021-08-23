@@ -1,0 +1,28 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bcs:QueryRscRelationResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
+                                       xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+            <QueryRscRelationResult>
+                <bcs:RscRelation>
+                    <bcs:PayRelationKey>CBS1653001</bcs:PayRelationKey>
+                    <bcs:PayObjType>S</bcs:PayObjType>
+                    <bcs:PayObjCode>889399988</bcs:PayObjCode>
+                    <bcs:RelationDestIdentify>
+                        <bcs:PrimaryIdentity>889399974</bcs:PrimaryIdentity>
+                    </bcs:RelationDestIdentify>
+                    <bcs:Priority>100</bcs:Priority>
+                    <bcs:StartTime>20210519162703</bcs:StartTime>
+                    <bcs:EndTime>20370101000000</bcs:EndTime>
+                    <bcs:UsageAmount>0</bcs:UsageAmount>
+                    <bcs:FreeUnitType>C_4500</bcs:FreeUnitType>
+                </bcs:RscRelation>
+            </QueryRscRelationResult>
+        </bcs:QueryRscRelationResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

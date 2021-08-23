@@ -1,0 +1,23 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <ars:QueryLoanLogResultMsg xmlns:ars="http://www.huawei.com/bme/cbsinterface/arservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+         <ResultHeader>
+            <cbs:Version>1</cbs:Version>
+            <cbs:ResultCode>0</cbs:ResultCode>
+            <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+            <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+         </ResultHeader>
+         <QueryLoanLogResult>
+            <ars:LoanLogSummary>
+               <ars:TotalDebtAMT>0</ars:TotalDebtAMT>
+               <ars:BlacklistStatus>N</ars:BlacklistStatus>
+               <ars:BlacelistDate/>
+               <ars:AdditionalProperty>
+                  <ars:Code>C_USAGEAMOUNT</ars:Code>
+                  <ars:Value>0</ars:Value>
+               </ars:AdditionalProperty>
+            </ars:LoanLogSummary>
+         </QueryLoanLogResult>
+      </ars:QueryLoanLogResultMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

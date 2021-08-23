@@ -1,0 +1,25 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bcs:ChangeSubOfferingResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
+                                        xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon"
+                                        xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+            <ChangeSubOfferingResult>
+                <bcs:AddOffering>
+                    <bcs:OfferingKey>
+                        <bcc:OfferingID>232177</bcc:OfferingID>
+                        <bcc:PurchaseSeq>fmm1111</bcc:PurchaseSeq>
+                    </bcs:OfferingKey>
+                    <bcs:EffectiveTime>20210415123653</bcs:EffectiveTime>
+                    <bcs:ExpirationTime>20210416123653</bcs:ExpirationTime>
+                    <bcs:RentDeductionStatus>0</bcs:RentDeductionStatus>
+                </bcs:AddOffering>
+            </ChangeSubOfferingResult>
+        </bcs:ChangeSubOfferingResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

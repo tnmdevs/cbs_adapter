@@ -4,7 +4,7 @@
 namespace TNM\CBS\Responses\CustomerInfo;
 
 use TNM\CBS\Responses\CbsResponse;
-use TNM\CBS\Services\CbsService;
+use TNM\CBS\Services\CustomerInfo\Customer;
 
 class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 {
@@ -67,5 +67,14 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         $hasActiveTimeLimit = isset($this->content['Subscriber']['SubscriberInfo']['ActiveTimeLimit']);
 
         return $hasActiveTimeLimit ? $this->content['Subscriber']['SubscriberInfo']['ActiveTimeLimit'] : '';
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        if ($this->hasNoContent()) return null;
+
+        $hasCustomer = isset($this->content['Customer']);
+
+        return $hasCustomer ? new Customer($this->content['Customer']) : null;
     }
 }

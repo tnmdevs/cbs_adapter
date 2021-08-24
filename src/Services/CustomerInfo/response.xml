@@ -71,6 +71,20 @@
                         </bcc:CustBasicInfo>
                     </bcs:CustInfo>
                     <bcs:IndividualInfo>
+                        <bcc:IDType>1</bcc:IDType>
+                        <bcc:IDNumber>DDFGGRS</bcc:IDNumber>
+                        <bcc:IDValidity>20210923020000</bcc:IDValidity>
+                        <bcc:Title>3</bcc:Title>
+                        <bcc:FirstName>Chimwemwe</bcc:FirstName>
+                        <bcc:MiddleName>Chikondi</bcc:MiddleName>
+                        <bcc:LastName>Kampingo</bcc:LastName>
+                        <bcc:HomeAddressKey>1520006164</bcc:HomeAddressKey>
+                        <bcc:Gender>1</bcc:Gender>
+                        <bcc:Nationality>Malawi</bcc:Nationality>
+                        <bcc:Birthday>19950910000000</bcc:Birthday>
+                        <bcc:MaritalStatus>3</bcc:MaritalStatus>
+                        <bcc:Education>0</bcc:Education>
+                        <bcc:Occupation>0</bcc:Occupation>
                         <bcc:IndividualProperty>
                             <bcc:Code>C_MKT_P_STATUS</bcc:Code>
                             <bcc:Value>1</bcc:Value>

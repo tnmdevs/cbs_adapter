@@ -24,6 +24,8 @@ use TNM\CBS\Services\LoanInfo\ILoanInfoService;
 use TNM\CBS\Services\Me2U\IMe2UService;
 use TNM\CBS\Services\OneOffDeduction\IOneOffDeductionService;
 use TNM\CBS\Services\SubscriberValidity\ISubscriberValidityService;
+use TNM\CBS\Services\UpdateAccountInfo\IUpdateAccountInfoService;
+use TNM\CBS\Services\UpdateAccountInfo\UpdateAccountInfoService;
 use TNM\CBS\Services\VoucherRecharge\IVoucherRechargeService;
 
 use TNM\CBS\Services\BundleSharing\DeleteBundleSharingRelationship\DeleteBundleSharingRelationshipService;
@@ -70,5 +72,6 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(IOrgCustomerCreationService::class,OrgCustomerCreationService::class);
         $this->app->bind(IOrgCustomerUpdateService::class,OrgCustomerUpdateService::class);
         $this->app->bind(IIndividualCustomerUpdateService::class,IndividualCustomerUpdateService::class);
+        $this->app->bind(IUpdateAccountInfoService::class,UpdateAccountInfoService::class);
     }
 }

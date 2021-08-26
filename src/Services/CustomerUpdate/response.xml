@@ -1,6 +1,6 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Body>
-        <bcs:CreateCustomerRequestMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
+        <bcs:ChangeCustInfoRequestMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
                                       xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon"
                                       xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
             <ResultHeader>
@@ -10,6 +10,6 @@
                 <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
             </ResultHeader>
 
-        </bcs:CreateCustomerRequestMsg>
+        </bcs:ChangeCustInfoRequestMsg>
     </soapenv:Body>
 </soapenv:Envelope>

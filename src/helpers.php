@@ -5,7 +5,7 @@ use Carbon\Carbon;
 if (!function_exists('package_path')) {
     function package_path(?string $path = ''): string
     {
-        return base_path('vendor/tnmdev/cbs/src/' . $path);
+        return sprintf('%s/%s', __DIR__, $path);
     }
 }
 

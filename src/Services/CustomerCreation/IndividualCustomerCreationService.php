@@ -6,7 +6,7 @@ namespace TNM\CBS\Services\CustomerCreation;
 
 use TNM\CBS\Services\CbsService;
 
-class IndividualCustomerCreationService extends CbsService implements ICustomerCreationService
+class IndividualCustomerCreationService extends CbsService implements IIndividualCustomerCreationService
 {
 
     protected function getRequestStubPath(): string

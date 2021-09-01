@@ -20,8 +20,7 @@
             </RequestHeader>
             <ChangeCustInfoRequest>
                 <bcs:CustAccessCode>
-                    <!--You have a CHOICE of the next 3 items at this level-->
-                    <bcc:PrimaryIdentity>{{msisdn}}</bcc:PrimaryIdentity>
+                   <bcc:CustomerKey>{{customer_key}}</bcc:CustomerKey>
                 </bcs:CustAccessCode>
                 <!--Optional:-->
                 <bcs:CustInfo>

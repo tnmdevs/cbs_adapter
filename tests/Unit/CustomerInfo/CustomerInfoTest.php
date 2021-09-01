@@ -18,6 +18,7 @@ class CustomerInfoTest extends TestCase
         $response = (new CustomerInfoClient('0888800900'))->query();
 
         $this->assertEquals('102000001270209', $response->getCustomer()->getCustomerKey());
+        $this->assertEquals('20211130235959',$response->getActiveTimeLimit());
 
     }
 

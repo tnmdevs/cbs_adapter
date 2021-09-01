@@ -31,7 +31,7 @@
                         <bcc:IDNumber>{{id_number}}</bcc:IDNumber>
                         <bcc:Title>{{title}}</bcc:Title>
                         <bcc:FirstName>{{first_name}}</bcc:FirstName>
-                        <bcc:MiddleName>{{middle_name}}<bcc:MiddleName/>
+                        <bcc:MiddleName>{{middle_name}}</bcc:MiddleName>
                         <bcc:LastName>{{last_name}}</bcc:LastName>
                         <bcc:HomeAddressKey>{{home_address_key}}</bcc:HomeAddressKey>
                         <bcc:Gender>{{gender}}</bcc:Gender>
@@ -39,19 +39,19 @@
                         <bcc:Birthday>{{birthday}}</bcc:Birthday>
                         <bcc:MaritalStatus>{{marital_status}}</bcc:MaritalStatus>
                         <!--Optional:-->
-                        <bcc:Education>{{education}}<bcc:Education/>
+                        <bcc:Education>{{education}}</bcc:Education>
                         <!--Optional:-->
-                        <bcc:Occupation>{{occupation}}<bcc:Occupation/>
+                        <bcc:Occupation>{{occupation}}</bcc:Occupation>
                         <!--Optional:-->
-                        <bcc:Salary>{{salary}}<bcc:Salary/>
+                        <bcc:Salary>{{salary}}</bcc:Salary>
                         <!--Optional:-->
-                        <bcc:OfficePhone>{{office_phone}}<bcc:OfficePhone/>
+                        <bcc:OfficePhone>{{office_phone}}</bcc:OfficePhone>
                         <!--Optional:-->
-                        <bcc:HomePhone>{{home_phone}}<bcc:HomePhone/>
+                        <bcc:HomePhone>{{home_phone}}</bcc:HomePhone>
                         <!--Optional:-->
 
                         <bcc:MobilePhone>{{mobile_phone}}</bcc:MobilePhone>
-                        <bcc:Fax>{{fax}}<bcc:Fax/>
+                        <bcc:Fax>{{fax}}</bcc:Fax>
                         <bcc:Email>{{email}}</bcc:Email>
                     </bcs:Individual>
                     <!--Optional:-->

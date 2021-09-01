@@ -52,17 +52,17 @@
 
                   <bcc:OrgSize>{{size}}</bcc:OrgSize>
                   <!--Optional:-->
-                  <bcc:Industry>{{industry}}<bcc:Industry/>
+                  <bcc:Industry>{{industry}}</bcc:Industry>
                   <!--Optional:-->
-                  <bcc:SubIndustry>{{sub_industry}}<bcc:SubIndustry/>
+                  <bcc:SubIndustry>{{sub_industry}}</bcc:SubIndustry>
                   <!--Optional:-->
-                  <bcc:OrgPhoneNumber>{{phone_number}}<bcc:OrgPhoneNumber/>
+                  <bcc:OrgPhoneNumber>{{phone_number}}</bcc:OrgPhoneNumber>
                   <!--Optional:-->
-                  <bcc:OrgFaxNumber>{{fax}} <bcc:OrgFaxNumber/>
+                  <bcc:OrgFaxNumber>{{fax}} </bcc:OrgFaxNumber>
                   <!--Optional:-->
-                  <bcc:OrgEmail>{{email}}<bcc:OrgEmail/>
+                  <bcc:OrgEmail>{{email}}</bcc:OrgEmail>
                   <!--Optional:-->
-                  <bcc:OrgWebSite>{{website}}<bcc:OrgWebSite/>
+                  <bcc:OrgWebSite>{{website}}</bcc:OrgWebSite>
                   <!--Zero or more repetitions:-->
 
                </bcs:OrgInfo>

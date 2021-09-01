@@ -29,7 +29,7 @@
                         <!--Optional:-->
                         <bcc:FirstName>{{first_name}}</bcc:FirstName>
                         <!--Optional:-->
-                        <bcc:MiddleName/>
+                        <bcc:MiddleName>{{middle_name}}</bcc:MiddleName>
                         <!--Optional:-->
                         <bcc:LastName>{{last_name}}</bcc:LastName>
                         <!--Optional:-->

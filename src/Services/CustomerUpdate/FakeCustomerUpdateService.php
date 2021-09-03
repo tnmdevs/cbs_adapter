@@ -16,6 +16,6 @@ class FakeCustomerUpdateService extends CbsFakeService implements IIndividualCus
 
     protected function getResponseNamespace(): string
     {
-        return 'ChangeCustInfoRequestMsg';
+        return 'ChangeCustInfoResultMsg';
     }
 }

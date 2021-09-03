@@ -15,7 +15,7 @@ class OrgCustomerUpdateService extends CbsService implements IOrgCustomerUpdateS
 
     protected function getResponseNamespace(): string
     {
-        return 'ChangeCustInfoRequestMsg';
+        return 'ChangeCustInfoResultMsg';
     }
 
     protected function getRequestEndpoint(): string

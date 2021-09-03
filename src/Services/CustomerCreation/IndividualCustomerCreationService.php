@@ -16,7 +16,7 @@ class IndividualCustomerCreationService extends CbsService implements IIndividua
 
     protected function getResponseNamespace(): string
     {
-        return 'CreateCustomerRequestMsg';
+        return 'CreateCustomerResultMsg';
     }
 
     protected function getRequestEndpoint(): string

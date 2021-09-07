@@ -5,7 +5,7 @@ namespace TNM\CBS\Tests\Unit\CustomerCreation;
 
 
 use TNM\CBS\Requests\IndividualRequest;
-use TNM\CBS\Services\CustomerCreation\FakeCustomerCreationService;
+use TNM\CBS\Services\CustomerCreation\FakeOrgCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IIndividualCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IndividualCustomerCreationClient;
 use TNM\CBS\Tests\TestCase;
@@ -14,7 +14,7 @@ class CustomerCreationTest extends TestCase
 {
     public function test_create_customer()
     {
-        $this->app->bind(IIndividualCustomerCreationService::class, FakeCustomerCreationService::class);
+        $this->app->bind(IIndividualCustomerCreationService::class, FakeOrgCustomerCreationService::class);
 
         $response = (new IndividualCustomerCreationClient(new IndividualRequest(['register_customer_key' => 'CSR163065156667f',
             'customer_key' => 'CSR163065156667f',

@@ -4,7 +4,9 @@
 namespace TNM\CBS\Responses\CustomerInfo;
 
 use TNM\CBS\Responses\CbsResponse;
-use TNM\CBS\Services\CustomerInfo\Customer;
+use TNM\CBS\Services\CustomerInfo\Customer\Customer;
+use TNM\CBS\Services\CustomerInfo\Customer\IndividualCustomer;
+use TNM\CBS\Services\CustomerInfo\Customer\OrganisationCustomer;
 
 class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 {
@@ -71,10 +73,11 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 
     public function getCustomer(): ?Customer
     {
-        if ($this->hasNoContent()) return null;
+        if ($this->hasNoContent() || !isset($this->content['Customer'])) return null;
+        $customer = $this->content['Customer'];
 
-        $hasCustomer = isset($this->content['Customer']);
-
-        return $hasCustomer ? new Customer($this->content['Customer']) : null;
+        return $customer['CustInfo']['CustType'] == 1
+            ? new IndividualCustomer($customer)
+            : new OrganisationCustomer($customer);
     }
 }

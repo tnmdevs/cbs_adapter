@@ -1,38 +1,9 @@
 <?php
 
+namespace TNM\CBS\Services\CustomerInfo\Customer;
 
-namespace TNM\CBS\Services\CustomerInfo;
-
-
-class Customer
+class IndividualCustomer extends Customer
 {
-    private array $attributes;
-
-    public function __construct(array $attributes)
-    {
-        $this->attributes = $attributes;
-    }
-
-    public function getCustomerKey(): string
-    {
-        return $this->attributes['CustKey'] ?? "";
-    }
-
-    public function getIdType(): string
-    {
-        return $this->attributes['IndividualInfo']['IDType'] ?? "";
-    }
-
-    public function getIdNumber(): string
-    {
-        return $this->attributes['IndividualInfo']['IDNumber'] ?? "";
-    }
-
-    public function getIDValidity(): string
-    {
-        return $this->attributes['IndividualInfo']['IDValidity'] ?? "";
-    }
-
     public function getTitle(): string
     {
         return $this->attributes['IndividualInfo']['Title'] ?? "";

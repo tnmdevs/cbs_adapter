@@ -784,6 +784,28 @@
                         <bcs:EndDate>20210430220000</bcs:EndDate>
                     </bcs:AccmUsageList>
 
+                    <bcs:LifeCycleDetail>
+                        <bcs:StatusDetail>000000000000000000000000</bcs:StatusDetail>
+                        <bcs:FraudTimes>0</bcs:FraudTimes>
+                        <bcs:RBlacklistStatus>0</bcs:RBlacklistStatus>
+                        <bcs:CurrentStatusIndex>2</bcs:CurrentStatusIndex>
+                        <bcs:LifeCycleStatus>
+                            <bcs:StatusName>Active</bcs:StatusName>
+                            <bcs:StatusExpireTime>20211130235959</bcs:StatusExpireTime>
+                            <bcs:StatusIndex>2</bcs:StatusIndex>
+                        </bcs:LifeCycleStatus>
+                        <bcs:LifeCycleStatus>
+                            <bcs:StatusName>Call Barring</bcs:StatusName>
+                            <bcs:StatusExpireTime>20211230235959</bcs:StatusExpireTime>
+                            <bcs:StatusIndex>3</bcs:StatusIndex>
+                        </bcs:LifeCycleStatus>
+                        <bcs:LifeCycleStatus>
+                            <bcs:StatusName>Suspend</bcs:StatusName>
+                            <bcs:StatusExpireTime>20220129235959</bcs:StatusExpireTime>
+                            <bcs:StatusIndex>4</bcs:StatusIndex>
+                        </bcs:LifeCycleStatus>
+                    </bcs:LifeCycleDetail>
+
                     <bcs:AcctList>
 
                         <bcs:AcctKey>101000001270210</bcs:AcctKey>

@@ -16,7 +16,7 @@ class OrgCustomerCreationService extends CbsService implements IOrgCustomerCreat
 
     protected function getResponseNamespace(): string
     {
-        return 'CreateCustomerRequestMsg';
+        return 'CreateCustomerResultMsg';
     }
 
     protected function getRequestEndpoint(): string

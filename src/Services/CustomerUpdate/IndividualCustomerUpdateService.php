@@ -16,7 +16,7 @@ class IndividualCustomerUpdateService extends CbsService implements IIndividualC
 
     protected function getResponseNamespace(): string
     {
-        return 'ChangeCustInfoRequestMsg';
+        return 'ChangeCustInfoResultMsg';
     }
 
     protected function getRequestEndpoint(): string

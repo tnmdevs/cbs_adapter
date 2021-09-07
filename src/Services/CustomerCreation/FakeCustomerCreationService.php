@@ -11,7 +11,7 @@ class FakeCustomerCreationService extends CbsFakeService implements IIndividualC
 
     protected function getResponseNamespace(): string
     {
-        return "CreateCustomerRequestMsg";
+        return "CreateCustomerResultMsg";
     }
 
     protected function getRequestStubPath(): string

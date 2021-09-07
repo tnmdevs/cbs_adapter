@@ -66,9 +66,18 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
     {
         if ($this->hasNoContent()) return '';
 
-        $hasActiveTimeLimit = isset($this->content['Subscriber']['SubscriberInfo']['ActiveTimeLimit']);
+        $hasActiveTimeLimit = isset($this->content['Subscriber']['LifeCycleDetail']['LifeCycleStatus']);
 
-        return $hasActiveTimeLimit ? $this->content['Subscriber']['SubscriberInfo']['ActiveTimeLimit'] : '';
+        if(!$hasActiveTimeLimit) return '';
+
+        $statuses=$this->content['Subscriber']['LifeCycleDetail']['LifeCycleStatus'];
+
+        $activeTimeLimit=collect($statuses)->first(function ($status)
+        {
+            return $status['StatusName']=='Active';
+        });
+
+        return $activeTimeLimit ? $activeTimeLimit['StatusExpireTime'] : '';
     }
 
     public function getCustomer(): ?Customer

@@ -18,6 +18,21 @@ class CustomerInfoTest extends TestCase
         $response = (new CustomerInfoClient('0888800900'))->query();
 
         $this->assertEquals('102000001270209', $response->getCustomer()->getCustomerKey());
+        $this->assertEquals('20211130235959',$response->getActiveTimeLimit());
+        $this->assertEquals('1',$response->getCustomer()->getIdType());
+        $this->assertEquals('DDFGGRS',$response->getCustomer()->getIdNumber());
+        $this->assertEquals('20210923020000',$response->getCustomer()->getIDValidity());
+        $this->assertEquals('3',$response->getCustomer()->getTitle());
+        $this->assertEquals('Chimwemwe',$response->getCustomer()->getFirstName());
+        $this->assertEquals('Chikondi',$response->getCustomer()->getMiddleName());
+        $this->assertEquals('Kampingo',$response->getCustomer()->getLastName());
+        $this->assertEquals('1520006164',$response->getCustomer()->getHomeAddressKey());
+        $this->assertEquals('1',$response->getCustomer()->getGender());
+        $this->assertEquals('Malawi',$response->getCustomer()->getNationality());
+        $this->assertEquals('19950910000000',$response->getCustomer()->getBirthday());
+        $this->assertEquals('3',$response->getCustomer()->getMaritalStatus());
+        $this->assertEquals('0',$response->getCustomer()->getEducation());
+        $this->assertEquals('0',$response->getCustomer()->getOccupation());
 
     }
 

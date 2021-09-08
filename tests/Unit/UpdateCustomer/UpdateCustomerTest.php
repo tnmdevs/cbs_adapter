@@ -1,11 +1,12 @@
 <?php
 
 
-namespace Unit\UpdateCustomer;
+namespace TNM\CBS\Tests\Unit\UpdateCustomer;
 
 
 use TNM\CBS\Requests\IndividualRequest;
 use TNM\CBS\Services\CustomerUpdate\FakeCustomerUpdateService;
+use TNM\CBS\Services\CustomerUpdate\FakeOrgCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\IIndividualCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\IndividualCustomerUpdateClient;
 use TNM\CBS\Tests\TestCase;

@@ -3,7 +3,7 @@
 
 namespace TNM\CBS\Responses\CustomerInfo;
 
-use TNM\CBS\Services\CustomerInfo\Customer;
+use TNM\CBS\Services\CustomerInfo\Customer\Customer;
 
 interface ICustomerInfoResponse
 {

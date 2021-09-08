@@ -6,6 +6,7 @@ namespace TNM\CBS\Tests\Unit\CustomerCreation;
 
 use TNM\CBS\Requests\IndividualRequest;
 use TNM\CBS\Services\CustomerCreation\FakeCustomerCreationService;
+use TNM\CBS\Services\CustomerCreation\FakeOrgCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IIndividualCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IndividualCustomerCreationClient;
 use TNM\CBS\Tests\TestCase;

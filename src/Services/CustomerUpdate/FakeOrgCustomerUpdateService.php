@@ -6,12 +6,12 @@ namespace TNM\CBS\Services\CustomerUpdate;
 
 use TNM\CBS\Services\CbsFakeService;
 
-class FakeCustomerUpdateService extends CbsFakeService implements IIndividualCustomerUpdateService
+class FakeOrgCustomerUpdateService extends CbsFakeService implements IOrgCustomerUpdateService
 {
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/update.individual.customer.stub';
+        return 'stubs/update.org.customer.stub';
     }
 
     protected function getResponseNamespace(): string

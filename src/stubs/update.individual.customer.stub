@@ -29,6 +29,7 @@
                     <bcs:Individual>
                         <bcc:IDType>{{id_type}}</bcc:IDType>
                         <bcc:IDNumber>{{id_number}}</bcc:IDNumber>
+                        <bcc:IDValidity>{{id_validity}}</bcc:IDValidity>
                         <bcc:Title>{{title}}</bcc:Title>
                         <bcc:FirstName>{{first_name}}</bcc:FirstName>
                         <bcc:MiddleName>{{middle_name}}</bcc:MiddleName>

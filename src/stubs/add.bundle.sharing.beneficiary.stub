@@ -30,14 +30,15 @@
                      </bcc:SubIdentify>
                   </bcc:RelationDestIdentify>
                   <bcc:FreeUnitType>{{account_type}}</bcc:FreeUnitType>
+                  {{comment_share_limit_start}}
                   <bcc:ShareLimit>
                      <bcc:LimitCycleType>M</bcc:LimitCycleType>
                      <bcc:LimitValue>{{limit_value}}</bcc:LimitValue>
-                     <bcc:MeasureUnit>1108</bcc:MeasureUnit>
+                     <bcc:MeasureUnit>{{measure_unit}}</bcc:MeasureUnit>
                   </bcc:ShareLimit>
+                  {{comment_share_limit_end}}
                   <bcc:StartTime>{{start_time}}</bcc:StartTime>
                   <bcc:EndTime>{{end_time}}</bcc:EndTime>
-                  <bcc:Priority>100</bcc:Priority>
                </bcs:AddRelation>
             </bcs:RscRelation>
          </ChangeRscRelationRequest>

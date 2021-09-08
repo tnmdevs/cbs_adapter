@@ -1,0 +1,47 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+    <soapenv:Header/>
+    <soapenv:Body>
+
+        <bcs:ChangeRscRelationRequestMsg>
+            <RequestHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:BusinessCode>1</cbs:BusinessCode>
+                <cbs:MessageSeq>LAR1631111677592D8DF</cbs:MessageSeq>
+                <cbs:OwnershipInfo>
+                    <cbs:BEID>101</cbs:BEID>
+                </cbs:OwnershipInfo>
+                <cbs:AccessSecurity>
+                    <cbs:LoginSystemCode></cbs:LoginSystemCode>
+                    <cbs:Password></cbs:Password>
+                </cbs:AccessSecurity>
+
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+            </RequestHeader>
+            <ChangeRscRelationRequest>
+                <bcs:SubAccessCode>
+                    <bcc:PrimaryIdentity></bcc:PrimaryIdentity>
+                </bcs:SubAccessCode>
+                <bcs:RscRelation>
+                    <bcs:AddRelation>
+                        <bcc:RelationObjType>S</bcc:RelationObjType>
+                        <bcc:RelationDestIdentify>
+                            <bcc:SubIdentify>
+                                <bcc:PrimaryIdentity>888800800</bcc:PrimaryIdentity>
+                            </bcc:SubIdentify>
+                        </bcc:RelationDestIdentify>
+                        <bcc:FreeUnitType>C_4500</bcc:FreeUnitType>
+
+                        <bcc:ShareLimit>
+                            <bcc:LimitCycleType>M</bcc:LimitCycleType>
+                            <bcc:LimitValue>50</bcc:LimitValue>
+                            <bcc:MeasureUnit>1108</bcc:MeasureUnit>
+                        </bcc:ShareLimit>
+
+                        <bcc:StartTime></bcc:StartTime>
+                        <bcc:EndTime></bcc:EndTime>
+                    </bcs:AddRelation>
+                </bcs:RscRelation>
+            </ChangeRscRelationRequest>
+        </bcs:ChangeRscRelationRequestMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

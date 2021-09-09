@@ -1,0 +1,34 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ars="http://www.huawei.com/bme/cbsinterface/arservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:arc="http://cbs.huawei.com/ar/wsservice/arcommon">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ars:QueryPaymentLogRequestMsg>
+         <RequestHeader>
+             <cbs:Version>1</cbs:Version>
+             <cbs:BusinessCode>1</cbs:BusinessCode>
+             <cbs:MessageSeq>{{trans_id}}</cbs:MessageSeq>
+             <cbs:OwnershipInfo>
+                <cbs:BEID>101</cbs:BEID>
+             </cbs:OwnershipInfo>
+             <cbs:AccessSecurity>
+                <cbs:LoginSystemCode>{{username}}</cbs:LoginSystemCode>
+                <cbs:Password>{{password}}</cbs:Password>
+             </cbs:AccessSecurity>
+             <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+          </RequestHeader>
+         <QueryPaymentLogRequest>
+            <ars:AcctAccessCode>
+
+               <arc:PrimaryIdentity>{{msisdn}}</arc:PrimaryIdentity>
+
+            </ars:AcctAccessCode>
+
+            <ars:TotalRowNum>0</ars:TotalRowNum>
+            <ars:BeginRowNum>0</ars:BeginRowNum>
+            <ars:FetchRowNum>500</ars:FetchRowNum>
+            <ars:StartTime>{{start_time}}</ars:StartTime>
+            <ars:EndTime>{{end_time}}</ars:EndTime>
+
+         </QueryPaymentLogRequest>
+      </ars:QueryPaymentLogRequestMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

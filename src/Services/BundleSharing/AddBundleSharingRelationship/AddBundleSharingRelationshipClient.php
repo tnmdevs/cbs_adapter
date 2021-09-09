@@ -23,8 +23,8 @@ class AddBundleSharingRelationshipClient implements ICBSClient
                                 string $beneficiary,
                                 string $accountType = null,
                                 int $limit = null,
-                                string $measureUnit='1108',
-                                string $startTime=null,
+                                string $measureUnit = '1106',
+                                string $startTime = null,
                                 string $endTime = null)
     {
         $this->service = app(IAddBundleSharingRelationshipService::class);
@@ -32,12 +32,12 @@ class AddBundleSharingRelationshipClient implements ICBSClient
         $this->beneficiary = $beneficiary;
         $this->accountType = $accountType;
         $this->limit = $limit;
-        $this->startTime=$startTime ? cbs_time(Carbon::parse($startTime)) : null;
+        $this->startTime = $startTime ? cbs_time(Carbon::parse($startTime)) : null;
         $this->endTime = $endTime ? cbs_time(Carbon::parse($endTime)) : null;
         $this->measureUnit = $measureUnit;
     }
 
-    public function getService():IAddBundleSharingRelationshipService
+    public function getService(): IAddBundleSharingRelationshipService
     {
         return $this->service;
     }
@@ -45,9 +45,9 @@ class AddBundleSharingRelationshipClient implements ICBSClient
     public function query(): CbsResponse
     {
         return $this->service->query([
-            'comment_share_limit_start'=>empty($this->limit)?'<!--':'',
-            'comment_share_limit_end'=>empty($this->limit)?'-->':'',
-            'measure_unit'=>$this->measureUnit,
+            'comment_share_limit_start' => empty($this->limit) ? '<!--' : '',
+            'comment_share_limit_end' => empty($this->limit) ? '-->' : '',
+            'measure_unit' => $this->measureUnit,
             'msisdn' => msisdn($this->msisdn)->toCbsFormat(),
             'beneficiary' => msisdn($this->beneficiary)->toCbsFormat(),
             'account_type' => $this->accountType ?: '',

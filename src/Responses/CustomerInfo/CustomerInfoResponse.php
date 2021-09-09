@@ -7,17 +7,18 @@ use TNM\CBS\Responses\CbsResponse;
 use TNM\CBS\Services\CustomerInfo\Customer\Customer;
 use TNM\CBS\Services\CustomerInfo\Customer\IndividualCustomer;
 use TNM\CBS\Services\CustomerInfo\Customer\OrganisationCustomer;
+use TNM\CBS\Utilities\CBS;
 
 class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 {
-
     public function getAccountType(): string
     {
+
         if ($this->hasNoContent()) return "";
 
         $hasAccountTag = isset($this->content['Account']['AcctInfo']['PaymentType']);
 
-        return $hasAccountTag ? $this->content['Account']['AcctInfo']['PaymentType'] : "";
+        return $hasAccountTag ? CBS::ACCOUNT_TYPES[$this->content['Account']['AcctInfo']['PaymentType']] : "";
     }
 
     public function getAccountBalances(): array

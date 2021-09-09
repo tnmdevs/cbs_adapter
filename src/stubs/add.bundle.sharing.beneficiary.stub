@@ -37,7 +37,7 @@
                      <bcc:MeasureUnit>{{measure_unit}}</bcc:MeasureUnit>
                   </bcc:ShareLimit>
                   {{comment_share_limit_end}}
-                  <bcc:StartTime>{{start_time}}</bcc:StartTime>
+                  <!--<bcc:StartTime>{{start_time}}</bcc:StartTime>-->
                   <bcc:EndTime>{{end_time}}</bcc:EndTime>
                </bcs:AddRelation>
             </bcs:RscRelation>

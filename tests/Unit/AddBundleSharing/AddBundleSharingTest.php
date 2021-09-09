@@ -15,7 +15,8 @@ class AddBundleSharingTest extends TestCase
     {
         $this->app->bind(IAddBundleSharingRelationshipService::class, FakeAddBundleSharingRelationshipService::class);
 
-        $response = (new AddBundleSharingRelationshipClient('0888800900','0888800800','C_4500',50,1108))->query();
+        $response = (new AddBundleSharingRelationshipClient('08888800900','0888800800','C_4500',null,1108))->query();
+
 
         $this->assertTrue($response->success());
     }

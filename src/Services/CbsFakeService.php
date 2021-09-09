@@ -50,6 +50,7 @@ abstract class CbsFakeService
         $requestBody = $this->getRequestBody($attributes);
         Event::dispatch(new CbsRequestEvent(['payload' => $attributes, 'body' => $requestBody], class_basename(static::class)));
 
+
         return new $responseClass(
             $this->getResponseNamespace(),
             $this->getContentTag(),

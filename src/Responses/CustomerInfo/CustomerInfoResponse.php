@@ -10,7 +10,6 @@ use TNM\CBS\Services\CustomerInfo\Customer\OrganisationCustomer;
 
 class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 {
-    private $accountTypesMap = [0 => 'PREPAID', 1 => 'POSTPAID', 2 => 'HYBRID'];
 
     public function getAccountType(): string
     {
@@ -18,7 +17,7 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 
         $hasAccountTag = isset($this->content['Account']['AcctInfo']['PaymentType']);
 
-        return $hasAccountTag ? $this->accountTypesMap[$this->content['Account']['AcctInfo']['PaymentType']] : "";
+        return $hasAccountTag ? $this->content['Account']['AcctInfo']['PaymentType'] : "";
     }
 
     public function getAccountBalances(): array

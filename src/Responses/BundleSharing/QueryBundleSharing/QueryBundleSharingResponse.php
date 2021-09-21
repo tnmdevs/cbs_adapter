@@ -12,7 +12,8 @@ class QueryBundleSharingResponse extends CbsResponse implements IQueryBundleShar
         if ($this->hasNoContent()) return [];
 
         $hasRelations = isset($this->content['RscRelation']);
+        $hasOne=isset($this->content['RscRelation']['PayRelationKey']);
 
-        return $hasRelations ? $this->content['RscRelation'] : [];
+        return $hasRelations ? $hasOne?[$this->content['RscRelation']]:$this->content['RscRelation'] : [];
     }
 }

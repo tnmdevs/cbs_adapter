@@ -27,7 +27,9 @@ class DeleteBundleSharingRelationshipClient implements ICBSClient
         return $this->service->query([
             'msisdn' => msisdn($this->msisdn)->toCbsFormat(),
             'beneficiary' => msisdn($this->beneficiary)->toCbsFormat(),
-            'account_type' => $this->accountType ?? ''
+            'account_type' => $this->accountType ?? '',
+            'comment_type'=>$this->accountType?'':'<!--',
+            'end_comment_type'=>$this->accountType?'':'-->'
         ]);
     }
 }

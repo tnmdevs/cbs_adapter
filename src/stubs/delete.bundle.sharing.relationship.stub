@@ -34,8 +34,9 @@
      	                </bcs:SubIdentify>
 
 	                  </bcs:RelationDestIdentify>
+	                  {{comment_type}}
                  	<bcs:FreeUnitType>{{account_type}}</bcs:FreeUnitType>
-
+                      {{end_comment_type}}
                   </bcs:DelRelation>
             </bcs:RscRelation>
          </ChangeRscRelationRequest>

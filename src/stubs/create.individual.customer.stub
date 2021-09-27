@@ -70,8 +70,9 @@
 
                   <bcc:MobilePhone>{{mobile_phone}}</bcc:MobilePhone>
                   <bcc:Fax>{{fax}}</bcc:Fax>
+                  {{comment_email}}
                   <bcc:Email>{{email}}</bcc:Email>
-
+                  {{comment_email_end}}
                </bcs:IndividualInfo>
             </bcs:Customer>
             <bcs:AddressInfo>

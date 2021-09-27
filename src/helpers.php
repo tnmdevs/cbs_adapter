@@ -9,6 +9,14 @@ if (!function_exists('package_path')) {
     }
 }
 
+if(!function_exists('is_valid_email')) {
+    function is_valid_email($email):bool
+    {
+        $regex = "/^([a-zA-Z0-9.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/";
+        return preg_match($regex, $email);
+    }
+}
+
 if (!function_exists('trans_id')) {
     function trans_id(): string
     {

@@ -44,7 +44,10 @@ class OrgCustomerCreationClient implements ICBSClient
     public function __construct(OrgRequest $request)
     {
         $this->service = app(IOrgCustomerCreationService::class);
-        $this->attributes = $request->toArray();
+        $this->attributes = array_merge($request->toArray(),[
+            'comment_email'=>is_valid_email($request->toArray()['email']??'')?'':'<!--',
+            'comment_email_end'=>is_valid_email($request->toArray()['email']??'')?'':'-->'
+        ]);
     }
 
     public function query(): CbsResponse

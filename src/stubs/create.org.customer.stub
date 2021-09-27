@@ -60,7 +60,9 @@
                   <!--Optional:-->
                   <bcc:OrgFaxNumber>{{fax}} </bcc:OrgFaxNumber>
                   <!--Optional:-->
+                  {{comment_email}}
                   <bcc:OrgEmail>{{email}}</bcc:OrgEmail>
+                  {{comment_email_end}}
                   <!--Optional:-->
                   <bcc:OrgWebSite>{{website}}</bcc:OrgWebSite>
                   <!--Zero or more repetitions:-->

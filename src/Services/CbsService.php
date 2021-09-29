@@ -25,6 +25,16 @@ abstract class CbsService
         return '';
     }
 
+    private function getReplacePattern(string $pattern): string
+    {
+        $patterns = [
+            'email' => '/[^ A-Za-z0-9@.\-]/',
+            'normal' => '/[^ A-Za-z0-9\-]/'
+        ];
+
+        return $patterns[$pattern] ?? $patterns['normal'];
+    }
+
     private function getRequestBody(array $attributes): string
     {
         $stub = file_get_contents(package_path($this->getRequestStubPath()));
@@ -34,8 +44,15 @@ abstract class CbsService
             'password' => config('cbs.password')
         ], $attributes);
 
-        foreach ($attributes as $placeholder => $value)
+        foreach ($attributes as $placeholder => $value) {
+
+            $value = preg_replace($this->getReplacePattern($placeholder), '', $value);
+
+            if ($placeholder == 'email')
+                $value = is_valid_email($value ?? '') ? $value : '';
+
             $stub = str_replace(sprintf('{{%s}}', $placeholder), $value, $stub);
+        }
 
         return $stub;
     }

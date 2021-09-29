@@ -8,32 +8,15 @@ use Illuminate\Support\Facades\Event;
 use TNM\CBS\Events\CbsRequestEvent;
 use TNM\CBS\Responses\CbsResponse;
 
-abstract class CbsFakeService
+abstract class CbsFakeService extends CBSBaseService
 {
-    abstract protected function getResponseNamespace(): string;
-
-    protected function getContentTag(): string
+    protected function getRequestEndpoint(): string
     {
         return '';
     }
-
-    abstract protected function getRequestStubPath(): string;
-
-
-    private function getRequestBody(array $attributes): string
+    protected function getContentTag(): string
     {
-        $stub = file_get_contents(package_path($this->getRequestStubPath()));
-
-        $attributes = array_merge([
-            'username' => config('cbs.username'),
-            'password' => config('cbs.password')
-        ], $attributes);
-
-        foreach ($attributes as $placeholder => $value)
-            $stub = str_replace(sprintf('{{%s}}', $placeholder), $value, $stub);
-
-
-        return $stub;
+        return '';
     }
 
     private function getFilePath(): string
@@ -49,7 +32,6 @@ abstract class CbsFakeService
         $attributes = array_merge($attributes, ['trans_id' => trans_id()]);
         $requestBody = $this->getRequestBody($attributes);
         Event::dispatch(new CbsRequestEvent(['payload' => $attributes, 'body' => $requestBody], class_basename(static::class)));
-
 
         return new $responseClass(
             $this->getResponseNamespace(),

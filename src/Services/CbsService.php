@@ -12,51 +12,8 @@ use TNM\CBS\Events\CbsRequestEvent;
 use TNM\CBS\Events\CbsResponseEvent;
 use TNM\CBS\Responses\CbsResponse;
 
-abstract class CbsService
+abstract class CbsService extends CBSBaseService
 {
-    abstract protected function getRequestStubPath(): string;
-
-    abstract protected function getResponseNamespace(): string;
-
-    abstract protected function getRequestEndpoint(): string;
-
-    protected function getContentTag(): string
-    {
-        return '';
-    }
-
-    private function getReplacePattern(string $pattern): string
-    {
-        $patterns = [
-            'email' => '/[^ A-Za-z0-9@.\-]/',
-            'normal' => '/[^ A-Za-z0-9\-]/'
-        ];
-
-        return $patterns[$pattern] ?? $patterns['normal'];
-    }
-
-    private function getRequestBody(array $attributes): string
-    {
-        $stub = file_get_contents(package_path($this->getRequestStubPath()));
-
-        $attributes = array_merge([
-            'username' => config('cbs.username'),
-            'password' => config('cbs.password')
-        ], $attributes);
-
-        foreach ($attributes as $placeholder => $value) {
-
-            $value = preg_replace($this->getReplacePattern($placeholder), '', $value);
-
-            if ($placeholder == 'email')
-                $value = is_valid_email($value ?? '') ? $value : '';
-
-            $stub = str_replace(sprintf('{{%s}}', $placeholder), $value, $stub);
-        }
-
-        return $stub;
-    }
-
     public function query(array $attributes, string $responseClass = CbsResponse::class): CbsResponse
     {
 

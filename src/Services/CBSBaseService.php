@@ -31,7 +31,7 @@ abstract class CBSBaseService
     {
         $patterns = [
             'email' => '/[^ A-Za-z0-9@.\-]/',
-            'normal' => '/[^ A-Za-z0-9\-]/'
+            'normal' => '/[^ A-Za-z0-9._\-]/'
         ];
 
         return $patterns[$pattern] ?? $patterns['normal'];

@@ -4,6 +4,8 @@
 namespace TNM\CBS\Responses;
 
 
+use TNM\CBS\Utilities\ErrorMessageTransformer;
+
 class CbsResponse
 {
     protected ?string $response;
@@ -71,7 +73,7 @@ class CbsResponse
             ? $this->array()['Body'][$this->responseNamespace]['ResultHeader']['ResultDesc']
             : 'Request failed. Please try again later';
 
-        return str_contains($message, ': ') ? $this->getHumanizedMessage($message) : $message;
+        return (new ErrorMessageTransformer($message))->getMessage();
     }
 
     public function toString(): string
@@ -98,11 +100,7 @@ class CbsResponse
     {
         return $this->hasContent() ? $this->getBody()[$this->contentTag] : [];
     }
-    private function getHumanizedMessage($message)
-    {
-        $parts = explode(': ', $message, 2);
-        return $parts[1];
-    }
+
     public function isInsufficientBalanceError(): bool
     {
         return false;

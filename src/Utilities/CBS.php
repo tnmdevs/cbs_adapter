@@ -35,4 +35,17 @@ class CBS
         '1' => 'POSTPAID',
         '3' => 'HYBRID'
     ];
+
+    const ERRORS_MAP=[
+        'The free unit entrusted payment relationship to delete does not exist.'=>'Relationship does not exist.',
+        'The entrusting subscriber in the new free unit entrusted payment relationship has another entrusted subscriber.'=>'The child belongs to another sharing group.',
+        'The entrusting subscriber in the new free unit entrusted payment relationship is the entrusted subscriber in another free unit entrusted payment relationship.'=>'The child belongs to another sharing group.',
+        'The entrusted subscriber in the new free unit entrusted payment relationship is an entrusting subscriber in another free unit entrusted payment relationship.'=>'The parent belongs to another sharing group.',
+        'The voucher does not exist in the VC.'=>'The voucher does not exist',
+        'The number of valid sharing relationships of free units under a same offering is larger than the maximum number of valid sharing relationships allowed by the VGS solution.'=>'Reached the maximum number of valid sharing relationships.',
+        'The entrusted and entrusting subscribers in the free unit entrusted payment relationship are the same.'=>'Cannot create a sharing relationship with the same number',
+        'The value  of FreeUnitType transferred does not exist.'=>'Transferred value is insufficient',
+        'In the transfer information, the transfer-in and transfer-out accounts are the same and the transfer-in account book type is the same as the transfer-out account book type.'=>'Cannot transfer to same number',
+        "Loan application failed because the subscriber's service activity period is shorter than the preset threshold."=>"Loan application failed because the service activity period is shorter",
+    ];
 }

@@ -47,6 +47,8 @@ class AddBundleSharingRelationshipClient implements ICBSClient
         return $this->service->query([
             'comment_share_limit_start' => empty($this->limit) ? '<!--' : '',
             'comment_share_limit_end' => empty($this->limit) ? '-->' : '',
+            'comment_free_unit_type'=>empty($this->accountType)?'<!--':'',
+            'comment_free_unit_type_end'=>empty($this->accountType)?'-->':'',
             'measure_unit' => $this->measureUnit,
             'msisdn' => msisdn($this->msisdn)->toCbsFormat(),
             'beneficiary' => msisdn($this->beneficiary)->toCbsFormat(),

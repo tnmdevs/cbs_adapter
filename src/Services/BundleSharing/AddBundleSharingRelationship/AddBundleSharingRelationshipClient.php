@@ -21,11 +21,11 @@ class AddBundleSharingRelationshipClient implements ICBSClient
 
     public function __construct(string $msisdn,
                                 string $beneficiary,
-                                string $accountType = null,
-                                int $limit = null,
+                                ?string $accountType = null,
+                                ?int $limit = null,
                                 string $measureUnit = '1106',
-                                string $startTime = null,
-                                string $endTime = null)
+                                ?string $startTime = null,
+                                ?string $endTime = null)
     {
         $this->service = app(IAddBundleSharingRelationshipService::class);
         $this->msisdn = $msisdn;

@@ -29,7 +29,9 @@
                         <bcc:PrimaryIdentity>{{beneficiary}}</bcc:PrimaryIdentity>
                      </bcc:SubIdentify>
                   </bcc:RelationDestIdentify>
+                  {{comment_free_unit_type}}
                   <bcc:FreeUnitType>{{account_type}}</bcc:FreeUnitType>
+                  {{comment_free_unit_type_end}}
                   {{comment_share_limit_start}}
                   <bcc:ShareLimit>
                      <bcc:LimitCycleType>M</bcc:LimitCycleType>

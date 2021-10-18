@@ -104,7 +104,7 @@ class CbsResponse
 
     public function isValidationError(): ?bool
     {
-        return !in_array($this->status(), CBS::ERROR_CODES);
+        return in_array($this->status(), CBS::ERROR_CODES);
     }
 
     public function isInsufficientBalanceError(): bool

@@ -36,6 +36,10 @@ class CBS
         '3' => 'HYBRID'
     ];
 
+    const ERROR_CODES=[
+        '20000001','20000002','20000003','20000004','20000005'
+    ];
+
     const ERRORS_MAP=[
         'The free unit entrusted payment relationship to delete does not exist.'=>'Relationship does not exist.',
         'The entrusting subscriber in the new free unit entrusted payment relationship has another entrusted subscriber.'=>'The child belongs to another sharing group.',

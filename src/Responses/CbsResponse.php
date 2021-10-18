@@ -4,6 +4,7 @@
 namespace TNM\CBS\Responses;
 
 
+use TNM\CBS\Utilities\CBS;
 use TNM\CBS\Utilities\ErrorMessageTransformer;
 
 class CbsResponse
@@ -99,6 +100,11 @@ class CbsResponse
     public function getContents(): array
     {
         return $this->hasContent() ? $this->getBody()[$this->contentTag] : [];
+    }
+
+    public function isValidationError(): ?bool
+    {
+        return !in_array($this->status(), CBS::ERROR_CODES);
     }
 
     public function isInsufficientBalanceError(): bool

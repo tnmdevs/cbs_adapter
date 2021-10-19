@@ -7,6 +7,11 @@ use TNM\CBS\Responses\CbsResponse;
 
 abstract class CBSBaseService
 {
+    private array $doNotSanitize=[
+        'username',
+        'password',
+        'voucher'
+    ];
     abstract protected function getRequestStubPath(): string;
 
     abstract protected function getResponseNamespace(): string;
@@ -20,7 +25,7 @@ abstract class CBSBaseService
 
     protected function sanitize(string $placeholder, ?string $value): string
     {
-        if($placeholder=='username' || $placeholder=='password') return $value;
+        if(in_array($placeholder,$this->doNotSanitize)) return $value;
 
         if(preg_match('/^(comment)/',$placeholder)) return $value;
 

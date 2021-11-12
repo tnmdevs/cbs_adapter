@@ -18,4 +18,6 @@ interface ICustomerInfoResponse
     public function getActiveTimeLimit(): string;
 
     public function getCustomer(): ?Customer;
+
+    public function getCreditLimit():array;
 }

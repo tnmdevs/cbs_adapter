@@ -3,6 +3,7 @@
 namespace TNM\CBS\Tests\Unit\CustomerInfo;
 
 use Illuminate\Support\Facades\Http;
+use TNM\CBS\Responses\CustomerInfo\CustomerInfoResponse;
 use TNM\CBS\Services\CustomerInfo\CustomerInfoClient;
 use TNM\CBS\Services\CustomerInfo\FakeCustomerInfoService;
 use TNM\CBS\Services\CustomerInfo\ICustomerInfoService;
@@ -36,9 +37,23 @@ class CustomerInfoTest extends TestCase
 
     }
 
+    public function test_get_customer_post_paid_credit_limit()
+    {
+        $this->withoutExceptionHandling();
+        $stub = file_get_contents(__DIR__.'/postpaid.response.xml');
+        $result=(new CustomerInfoResponse('QueryCustomerInfoResultMsg','QueryCustomerInfoResult',$stub));
+
+        $creditLimit=$result->getCreditLimit()[0];
+
+        $this->assertEquals('7000000',$creditLimit['TotalCreditAmount']);
+        $this->assertEquals('-878334',$creditLimit['TotalUsageAmount']);
+        $this->assertEquals('7878334',$creditLimit['TotalRemainAmount']);
+    }
+
     public function _test_get_customer_info_without_bundles()
     {
         $stub = file_get_contents(base_path('tests/Feature/App/Home/no.bundle.response.xml'));
+
         Http::fake(['*' => Http::response($stub)]);
 
         $this->seed(DatabaseSeeder::class);

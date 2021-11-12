@@ -72,7 +72,7 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 
         $creditLimit = $this->content['Subscriber']['AcctList']['AccountCredit'];
 
-        $hasOneRecord = isset($creditLimit['CreditLimitType']);
+        $hasOneRecord = isset($creditLimit['TotalCreditAmount']);
 
         return $hasOneRecord ? [$creditLimit] : $creditLimit;
     }

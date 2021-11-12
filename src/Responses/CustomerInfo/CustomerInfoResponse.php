@@ -62,16 +62,19 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $hasOneUsage ? [$usageList] : $usageList;
     }
 
-    public function getCreditLimit():array{
-        if(!$this->hasContent()) return [];
+    public function getCreditLimit(): array
+    {
+        if (!$this->hasContent()) return [];
 
-        $hasCreditLimit=isset($this->content['Subscriber']['AcctList']['AccountCredit']);
+        $hasCreditLimit = isset($this->content['Subscriber']['AcctList']['AccountCredit']);
 
-        $creditLimit=$this->content['Subscriber']['AcctList']['AccountCredit'];
-        if(!$hasCreditLimit) return [];
+        if (!$hasCreditLimit) return [];
 
-        $hasOneRecord=isset($creditLimit['CreditLimitType']);
-        return $hasOneRecord?[$creditLimit]:$creditLimit;
+        $creditLimit = $this->content['Subscriber']['AcctList']['AccountCredit'];
+
+        $hasOneRecord = isset($creditLimit['TotalCreditAmount']);
+
+        return $hasOneRecord ? [$creditLimit] : $creditLimit;
     }
 
     public function getActiveTimeLimit(): string
@@ -80,13 +83,12 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 
         $hasActiveTimeLimit = isset($this->content['Subscriber']['LifeCycleDetail']['LifeCycleStatus']);
 
-        if(!$hasActiveTimeLimit) return '';
+        if (!$hasActiveTimeLimit) return '';
 
-        $statuses=$this->content['Subscriber']['LifeCycleDetail']['LifeCycleStatus'];
+        $statuses = $this->content['Subscriber']['LifeCycleDetail']['LifeCycleStatus'];
 
-        $activeTimeLimit=collect($statuses)->first(function ($status)
-        {
-            return $status['StatusName']=='Active';
+        $activeTimeLimit = collect($statuses)->first(function ($status) {
+            return $status['StatusName'] == 'Active';
         });
 
         return $activeTimeLimit ? $activeTimeLimit['StatusExpireTime'] : '';

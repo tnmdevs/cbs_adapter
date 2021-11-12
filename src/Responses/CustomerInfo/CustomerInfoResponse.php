@@ -62,6 +62,18 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $hasOneUsage ? [$usageList] : $usageList;
     }
 
+    public function getCreditLimit():array{
+        if(!$this->hasContent()) return [];
+
+        $hasCreditLimit=isset($this->content['Subscriber']['AcctList']['AccountCredit']);
+
+        $creditLimit=$this->content['Subscriber']['AcctList']['AccountCredit'];
+        if(!$hasCreditLimit) return [];
+
+        $hasOneRecord=isset($creditLimit['CreditLimitType']);
+        return $hasOneRecord?[$creditLimit]:$creditLimit;
+    }
+
     public function getActiveTimeLimit(): string
     {
         if ($this->hasNoContent()) return '';

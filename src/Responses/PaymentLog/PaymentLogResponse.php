@@ -11,8 +11,10 @@ class PaymentLogResponse extends CbsResponse implements IPaymentLogResponse
 
     public function getLogs(): array
     {
-        if ($this->hasNoContent()) return [];
+        if ($this->hasNoContent() || !isset($this->getContents()['PaymentInfo'])) return [];
 
-        return isset($this->getContents()['PaymentInfo'])?$this->getContents()['PaymentInfo']:[];
+        $hasOne=isset($this->getContents()['PaymentInfo']['TransID']);
+
+        return $hasOne?[$this->getContents()['PaymentInfo']]:$this->getContents()['PaymentInfo'];
     }
 }

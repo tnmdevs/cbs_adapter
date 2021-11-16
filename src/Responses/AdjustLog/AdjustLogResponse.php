@@ -11,8 +11,11 @@ class AdjustLogResponse extends CbsResponse implements IAdjustLogResponse
 
     public function getLogs(): array
     {
-        if ($this->hasNoContent()) return [];
 
-        return isset($this->getContents()['AdjustInfo'])?$this->getContents()['AdjustInfo']:[];
+        if ($this->hasNoContent() || !isset($this->getContents()['AdjustInfo'])) return [];
+
+        $hasOne=isset($this->getContents()['AdjustInfo']['TransID']);
+
+        return $hasOne?[$this->getContents()['AdjustInfo']]:$this->getContents()['PaymentInfo'];
     }
 }

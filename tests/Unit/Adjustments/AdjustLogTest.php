@@ -16,6 +16,6 @@ class AdjustLogTest extends TestCase
 
      $this->assertEquals(1,sizeof($adjust));
 
-     $this->assertEquals('100', $adjust[0]['FreeUnitAdjustmentInfo']['AdjustmentAmt']);
+     $this->assertEquals('100', $adjust[0]['BalanceAdjustmentInfo']['AdjustmentAmt']);
  }
 }

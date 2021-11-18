@@ -15,6 +15,6 @@ class FakeMe2UService extends CbsFakeService implements IMe2UService
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/me2u.stub';
+        return 'stubs/me2u.stub.xml';
     }
 }

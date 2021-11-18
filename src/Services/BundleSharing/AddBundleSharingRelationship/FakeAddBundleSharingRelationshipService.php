@@ -14,6 +14,6 @@ class FakeAddBundleSharingRelationshipService extends CbsFakeService implements 
     }
     protected function getRequestStubPath(): string
     {
-        return 'stubs/add.bundle.sharing.beneficiary.stub';
+        return 'stubs/add.bundle.sharing.beneficiary.stub.xml';
     }
 }

@@ -19,6 +19,6 @@ class FakeAvailableOffersService extends CbsFakeService implements IAvailableOff
     }
     protected function getRequestStubPath(): string
     {
-        return 'stubs/get.available.offers.stub';
+        return 'stubs/get.available.offers.stub.xml';
     }
 }

@@ -21,6 +21,6 @@ class FakeQueryBundleSharingChildrenService extends CbsFakeService implements IQ
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/query.bundle.sharing.children.stub';
+        return 'stubs/query.bundle.sharing.children.stub.xml';
     }
 }

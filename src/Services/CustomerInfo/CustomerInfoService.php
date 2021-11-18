@@ -8,7 +8,7 @@ class CustomerInfoService extends CbsService implements ICustomerInfoService
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/customer.info.stub';
+        return 'stubs/customer.info.stub.xml';
     }
 
     protected function getResponseNamespace(): string

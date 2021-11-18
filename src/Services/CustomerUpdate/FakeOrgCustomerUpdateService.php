@@ -11,7 +11,7 @@ class FakeOrgCustomerUpdateService extends CbsFakeService implements IOrgCustome
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/update.org.customer.stub';
+        return 'stubs/update.org.customer.stub.xml';
     }
 
     protected function getResponseNamespace(): string

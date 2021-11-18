@@ -15,6 +15,6 @@ class FakeBundleSubscriptionService extends CbsFakeService implements IBundleSub
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/bundle.subscription.stub';
+        return 'stubs/bundle.subscription.stub.xml';
     }
 }

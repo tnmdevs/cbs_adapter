@@ -10,7 +10,7 @@ class LoanInfoService extends CbsService implements ILoanInfoService
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/loan.info.stub';
+        return 'stubs/loan.info.stub.xml';
     }
 
     protected function getResponseNamespace(): string

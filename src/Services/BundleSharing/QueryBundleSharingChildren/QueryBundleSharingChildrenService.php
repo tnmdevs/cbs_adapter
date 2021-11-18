@@ -10,7 +10,7 @@ class QueryBundleSharingChildrenService extends CbsService implements IQueryBund
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/query.bundle.sharing.children.stub';
+        return 'stubs/query.bundle.sharing.children.stub.xml';
     }
 
     protected function getResponseNamespace(): string

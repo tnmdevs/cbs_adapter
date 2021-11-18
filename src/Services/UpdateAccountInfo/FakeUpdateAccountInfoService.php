@@ -16,6 +16,6 @@ class FakeUpdateAccountInfoService extends CbsFakeService implements IUpdateAcco
 
     protected function getRequestStubPath(): string
     {
-        return "stubs/update.account.stub";
+        return "stubs/update.account.stub.xml";
     }
 }

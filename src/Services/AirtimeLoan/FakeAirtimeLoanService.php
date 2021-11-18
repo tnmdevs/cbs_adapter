@@ -18,6 +18,6 @@ class FakeAirtimeLoanService extends CbsFakeService implements IAirtimeLoanServi
     }
     protected function getRequestStubPath(): string
     {
-        return 'stubs/airtime.loan.stub';
+        return 'stubs/airtime.loan.stub.xml';
     }
 }

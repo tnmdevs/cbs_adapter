@@ -16,6 +16,6 @@ class FakeSubscriberValidityService extends CbsFakeService implements ISubscribe
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/subscriber.validity.stub';
+        return 'stubs/subscriber.validity.stub.xml';
     }
 }

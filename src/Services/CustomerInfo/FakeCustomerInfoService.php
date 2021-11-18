@@ -20,6 +20,6 @@ class FakeCustomerInfoService extends CbsFakeService implements ICustomerInfoSer
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/customer.info.stub';
+        return 'stubs/customer.info.stub.xml';
     }
 }

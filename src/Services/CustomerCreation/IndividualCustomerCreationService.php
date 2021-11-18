@@ -11,7 +11,7 @@ class IndividualCustomerCreationService extends CbsService implements IIndividua
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/create.individual.customer.stub';
+        return 'stubs/create.individual.customer.stub.xml';
     }
 
     protected function getResponseNamespace(): string

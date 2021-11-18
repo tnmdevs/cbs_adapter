@@ -11,7 +11,7 @@ class OrgCustomerCreationService extends CbsService implements IOrgCustomerCreat
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/create.org.customer.stub';
+        return 'stubs/create.org.customer.stub.xml';
     }
 
     protected function getResponseNamespace(): string

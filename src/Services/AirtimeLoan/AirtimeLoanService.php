@@ -10,7 +10,7 @@ class AirtimeLoanService extends CbsService implements IAirtimeLoanService
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/airtime.loan.stub';
+        return 'stubs/airtime.loan.stub.xml';
     }
 
     protected function getRequestEndpoint(): string

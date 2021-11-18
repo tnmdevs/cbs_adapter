@@ -11,7 +11,7 @@ class AvailableOffersService extends CbsService implements IAvailableOffersServi
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/get.available.offers.stub';
+        return 'stubs/get.available.offers.stub.xml';
     }
 
     protected function getResponseNamespace(): string

@@ -11,7 +11,7 @@ class ModifyBundleSharingRelationshipService extends CbsService implements IModi
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/modify.bundle.sharing.relationship.stub';
+        return 'stubs/modify.bundle.sharing.relationship.stub.xml';
     }
 
     protected function getResponseNamespace(): string

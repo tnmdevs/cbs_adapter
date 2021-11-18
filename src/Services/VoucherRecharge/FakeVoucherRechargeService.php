@@ -15,6 +15,6 @@ class FakeVoucherRechargeService extends CbsFakeService implements IVoucherRecha
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/voucher.recharge.stub';
+        return 'stubs/voucher.recharge.stub.xml';
     }
 }

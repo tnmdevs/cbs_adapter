@@ -10,7 +10,7 @@ class DeleteBundleSharingRelationshipService extends CbsService implements IDele
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/delete.bundle.sharing.relationship.stub';
+        return 'stubs/delete.bundle.sharing.relationship.stub.xml';
     }
 
     protected function getResponseNamespace(): string

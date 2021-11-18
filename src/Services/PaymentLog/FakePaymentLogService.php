@@ -11,7 +11,7 @@ class FakePaymentLogService extends CbsFakeService implements IPaymentLogService
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/payment.log.stub';
+        return 'stubs/payment.log.stub.xml';
     }
 
     protected function getResponseNamespace(): string

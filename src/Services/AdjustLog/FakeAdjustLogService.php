@@ -21,6 +21,6 @@ class FakeAdjustLogService extends CbsFakeService implements IAdjustLogService
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/query.adjust.log.stub';
+        return 'stubs/query.adjust.log.stub.xml';
     }
 }

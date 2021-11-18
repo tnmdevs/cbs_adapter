@@ -16,6 +16,6 @@ class FakeCustomerCreationService extends CbsFakeService implements IIndividualC
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/create.individual.customer.stub';
+        return 'stubs/create.individual.customer.stub.xml';
     }
 }

@@ -16,6 +16,6 @@ class FakeOrgCustomerCreationService extends CbsFakeService implements IOrgCusto
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/create.org.customer.stub';
+        return 'stubs/create.org.customer.stub.xml';
     }
 }

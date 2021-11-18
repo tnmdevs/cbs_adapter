@@ -14,8 +14,9 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "laravel/framework": "^7.0|^8.0",
-        "orchestra/testbench": "^5.0|^6.20"
+        "laravel/framework": "^7.0",
+        "orchestra/testbench": "^5.0",
+        "guzzlehttp/guzzle": "^7.4"
     },
     "autoload": {
         "psr-4": {

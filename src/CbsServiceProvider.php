@@ -3,6 +3,8 @@
 namespace TNM\CBS;
 
 use Illuminate\Support\ServiceProvider;
+use TNM\CBS\Services\AdjustLog\AdjustLogService;
+use TNM\CBS\Services\AdjustLog\IAdjustLogService;
 use TNM\CBS\Services\AirtimeLoan\IAirtimeLoanService;
 use TNM\CBS\Services\AvailableOffers\IAvailableOffersService;
 use TNM\CBS\Services\BundleSharing\AddBundleSharingRelationship\IAddBundleSharingRelationshipService;
@@ -11,6 +13,8 @@ use TNM\CBS\Services\BundleSharing\ModifyBundleSharingRelationship\IModifyBundle
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingChildren\IQueryBundleSharingChildrenService;
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingParents\IQueryBundleSharingParentsService;
 use TNM\CBS\Services\BundleSubscription\IBundleSubscriptionService;
+use TNM\CBS\Services\CustomerBalances\IQueryCustomerBalancesService;
+use TNM\CBS\Services\CustomerBalances\QueryCustomerBalancesService;
 use TNM\CBS\Services\CustomerCreation\IIndividualCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IndividualCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IOrgCustomerCreationService;
@@ -20,9 +24,13 @@ use TNM\CBS\Services\CustomerUpdate\IIndividualCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\IndividualCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\IOrgCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\OrgCustomerUpdateService;
+use TNM\CBS\Services\Invoices\IInvoicesService;
+use TNM\CBS\Services\Invoices\InvoicesService;
 use TNM\CBS\Services\LoanInfo\ILoanInfoService;
 use TNM\CBS\Services\Me2U\IMe2UService;
 use TNM\CBS\Services\OneOffDeduction\IOneOffDeductionService;
+use TNM\CBS\Services\PaymentLog\IPaymentLogService;
+use TNM\CBS\Services\PaymentLog\PaymentLogService;
 use TNM\CBS\Services\SubscriberValidity\ISubscriberValidityService;
 use TNM\CBS\Services\UpdateAccountInfo\IUpdateAccountInfoService;
 use TNM\CBS\Services\UpdateAccountInfo\UpdateAccountInfoService;
@@ -73,5 +81,9 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(IOrgCustomerUpdateService::class,OrgCustomerUpdateService::class);
         $this->app->bind(IIndividualCustomerUpdateService::class,IndividualCustomerUpdateService::class);
         $this->app->bind(IUpdateAccountInfoService::class,UpdateAccountInfoService::class);
+        $this->app->bind(IInvoicesService::class,InvoicesService::class);
+        $this->app->bind(IPaymentLogService::class,PaymentLogService::class);
+        $this->app->bind(IAdjustLogService::class,AdjustLogService::class);
+        $this->app->bind(IQueryCustomerBalancesService::class,QueryCustomerBalancesService::class);
     }
 }

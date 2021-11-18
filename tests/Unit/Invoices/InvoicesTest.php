@@ -9,7 +9,6 @@ class InvoicesTest extends TestCase
 {
     public function test_list_invoices()
     {
-        $this->withoutExceptionHandling();
         $stub = file_get_contents(__DIR__ . '/invoices.response.xml');
         $result = (new InvoicesResponse('QueryInvoiceResultMsg', 'QueryInvoiceResult', $stub));
 

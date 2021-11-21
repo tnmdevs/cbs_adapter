@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bcs:QueryConsumptionLimitResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+            <QueryConsumptionLimitResult>
+                <bcs:LimitUsageList>
+                    <bcs:LimitType>C_SPEND_LIMIT_ALL_BILL_MK</bcs:LimitType>
+                    <bcs:LimitTypeName>C_SPEND_LIMIT_ALL_BILL_MK</bcs:LimitTypeName>
+                    <bcs:Amount>1000000</bcs:Amount>
+                    <bcs:UsageAmount>764343</bcs:UsageAmount>
+                    <bcs:LimitCtrlType>M</bcs:LimitCtrlType>
+                    <bcs:CurrencyID>1102</bcs:CurrencyID>
+                    <bcs:MeasureType>1102</bcs:MeasureType>
+                    <bcs:BeginDate>20211101000000</bcs:BeginDate>
+                    <bcs:EndDay>20211201000000</bcs:EndDay>
+                    <bcs:EffectiveTime>20211105182634</bcs:EffectiveTime>
+                    <bcs:ExpireTime>20370101000000</bcs:ExpireTime>
+                </bcs:LimitUsageList>
+            </QueryConsumptionLimitResult>
+        </bcs:QueryConsumptionLimitResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

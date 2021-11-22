@@ -6,6 +6,12 @@ namespace TNM\CBS\Utilities;
 
 class CBS
 {
+    const CUSTOMER_TYPE=[
+        '1'=>'Individual',
+        '2'=>'Organisation',
+        '3'=>'Family'
+    ];
+
     const MEASURE_UNITS = [
         '1003' => 'Seconds',
         '1004' => 'Minutes',

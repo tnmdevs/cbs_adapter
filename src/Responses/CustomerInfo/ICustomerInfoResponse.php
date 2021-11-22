@@ -7,6 +7,14 @@ use TNM\CBS\Services\CustomerInfo\Customer\Customer;
 
 interface ICustomerInfoResponse
 {
+    public function getCustomerType():string;
+
+    public function isIndividual():bool;
+
+    public function isOrganisation(): bool;
+
+    public function isFamily():bool;
+
     public function getAccountType(): string;
 
     public function getAccountBalances(): array;

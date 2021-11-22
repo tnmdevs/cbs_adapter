@@ -103,4 +103,28 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
             ? new IndividualCustomer($customer)
             : new OrganisationCustomer($customer);
     }
+
+    public function getCustomerType(): string
+    {
+        if ($this->hasNoContent()) return "";
+
+        $hasAccountTag = isset($this->content['Customer']['CustInfo']['CustType']);
+
+        return $hasAccountTag ? CBS::ACCOUNT_TYPES[$this->content['Customer']['CustInfo']['CustType']] : "";
+    }
+
+    public function isIndividual(): bool
+    {
+        return $this->getCustomerType()== array_flip(CBS::CUSTOMER_TYPE)['Individual'];
+    }
+
+    public function isOrganisation(): bool
+    {
+        return $this->getCustomerType()== array_flip(CBS::CUSTOMER_TYPE)['Organisation'];
+    }
+
+    public function isFamily(): bool
+    {
+        return $this->getCustomerType()== array_flip(CBS::CUSTOMER_TYPE)['Family'];
+    }
 }

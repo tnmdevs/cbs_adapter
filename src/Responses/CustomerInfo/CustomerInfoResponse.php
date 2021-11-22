@@ -127,4 +127,9 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
     {
         return $this->getCustomerType()== array_flip(CBS::CUSTOMER_TYPE)['Family'];
     }
+
+    public function isPostPaid(): bool
+    {
+        return $this->getAccountType()==CBS::ACCOUNT_TYPES['1'];
+    }
 }

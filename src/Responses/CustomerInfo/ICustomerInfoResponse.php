@@ -11,6 +11,8 @@ interface ICustomerInfoResponse
 
     public function isIndividual():bool;
 
+    public function isPostPaid():bool;
+
     public function isOrganisation(): bool;
 
     public function isFamily():bool;

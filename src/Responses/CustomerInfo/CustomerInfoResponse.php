@@ -21,6 +21,15 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $hasAccountTag ? CBS::ACCOUNT_TYPES[$this->content['Account']['AcctInfo']['PaymentType']] : "";
     }
 
+    public function getAccountKey(): string
+    {
+        if ($this->hasNoContent()) return "";
+
+        $hasAccountTag = isset($this->content['Account']['AcctKey']);
+
+        return $hasAccountTag ? $this->content['Account']['AcctKey'] : "";
+    }
+
     public function getAccountBalances(): array
     {
         if ($this->hasNoContent()) return [];
@@ -128,4 +137,6 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
     {
         return $this->getAccountType() == CBS::ACCOUNT_TYPES['1'];
     }
+
+
 }

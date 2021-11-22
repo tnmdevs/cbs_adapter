@@ -19,6 +19,8 @@ interface ICustomerInfoResponse
 
     public function getAccountType(): string;
 
+    public function getAccountKey(): string;
+
     public function getAccountBalances(): array;
 
     public function getBundleBalances(): array;

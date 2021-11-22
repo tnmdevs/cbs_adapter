@@ -43,7 +43,7 @@ class CustomerInfoTest extends TestCase
         $stub = file_get_contents(__DIR__.'/postpaid.response.xml');
         $result=(new CustomerInfoResponse('QueryCustomerInfoResultMsg','QueryCustomerInfoResult',$stub));
 
-        $creditLimit=$result->getCreditLimit()[0];
+        $creditLimit=$result->getCreditLimit();
 
         $this->assertEquals('7000000',$creditLimit['TotalCreditAmount']);
         $this->assertEquals('-878334',$creditLimit['TotalUsageAmount']);

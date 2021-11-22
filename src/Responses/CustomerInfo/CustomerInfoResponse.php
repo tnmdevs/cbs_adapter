@@ -113,9 +113,9 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
     {
         if ($this->hasNoContent()) return "";
 
-        $hasAccountTag = isset($this->content['Customer']['CustInfo']['CustType']);
+        $hasTypeTag = isset($this->content['Customer']['CustInfo']['CustType']);
 
-        return $hasAccountTag ? CBS::ACCOUNT_TYPES[$this->content['Customer']['CustInfo']['CustType']] : "";
+        return $hasTypeTag ? $this->content['Customer']['CustInfo']['CustType'] : "";
     }
 
     public function isIndividual(): bool

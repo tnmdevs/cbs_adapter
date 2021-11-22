@@ -35,6 +35,7 @@ class CustomerInfoTest extends TestCase
         $this->assertEquals('0',$response->getCustomer()->getEducation());
         $this->assertEquals('0',$response->getCustomer()->getOccupation());
         $this->assertEquals('101000001270210',$response->getAccountKey());
+        $this->assertEquals('1',$response->getCustomerType());
 
 
     }

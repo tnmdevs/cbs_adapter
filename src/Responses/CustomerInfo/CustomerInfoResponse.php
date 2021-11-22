@@ -115,21 +115,21 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 
     public function isIndividual(): bool
     {
-        return $this->getCustomerType()== array_flip(CBS::CUSTOMER_TYPE)['Individual'];
+        return $this->getCustomerType() == array_flip(CBS::CUSTOMER_TYPE)['Individual'];
     }
 
     public function isOrganisation(): bool
     {
-        return $this->getCustomerType()== array_flip(CBS::CUSTOMER_TYPE)['Organisation'];
+        return $this->getCustomerType() == array_flip(CBS::CUSTOMER_TYPE)['Organisation'];
     }
 
     public function isFamily(): bool
     {
-        return $this->getCustomerType()== array_flip(CBS::CUSTOMER_TYPE)['Family'];
+        return $this->getCustomerType() == array_flip(CBS::CUSTOMER_TYPE)['Family'];
     }
 
     public function isPostPaid(): bool
     {
-        return $this->getAccountType()==CBS::ACCOUNT_TYPES['1'];
+        return $this->getAccountType() == CBS::ACCOUNT_TYPES['1'];
     }
 }

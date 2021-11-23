@@ -34,6 +34,8 @@ use TNM\CBS\Services\OneOffDeduction\IOneOffDeductionService;
 use TNM\CBS\Services\PaymentLog\IPaymentLogService;
 use TNM\CBS\Services\PaymentLog\PaymentLogService;
 use TNM\CBS\Services\SubscriberValidity\ISubscriberValidityService;
+use TNM\CBS\Services\TotalUsage\ITotalUsageService;
+use TNM\CBS\Services\TotalUsage\TotalUsageService;
 use TNM\CBS\Services\UpdateAccountInfo\IUpdateAccountInfoService;
 use TNM\CBS\Services\UpdateAccountInfo\UpdateAccountInfoService;
 use TNM\CBS\Services\VoucherRecharge\IVoucherRechargeService;
@@ -88,5 +90,6 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(IAdjustLogService::class,AdjustLogService::class);
         $this->app->bind(IQueryCustomerBalancesService::class,QueryCustomerBalancesService::class);
         $this->app->bind(IConsumptionLimitService::class,ConsumptionLimitService::class);
+        $this->app->bind(ITotalUsageService::class, TotalUsageService::class);
     }
 }

@@ -14,6 +14,11 @@ class FakeTotalUsageService extends \TNM\CBS\Services\CbsFakeService implements 
 
     protected function getResponseNamespace(): string
     {
+        return 'QueryTotalBalanceResultMsg';
+    }
+
+    protected function getContentTag(): string
+    {
         return 'QueryTotalBalanceResult';
     }
 }

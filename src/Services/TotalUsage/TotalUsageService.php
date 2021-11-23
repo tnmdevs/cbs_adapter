@@ -20,7 +20,7 @@ class TotalUsageService extends CbsService implements ITotalUsageService
 
     protected function getRequestEndpoint(): string
     {
-        return 'services/BcServices';
+        return 'services/ArServices';
     }
 
     protected function getContentTag(): string

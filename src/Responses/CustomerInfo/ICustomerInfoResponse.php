@@ -25,6 +25,8 @@ interface ICustomerInfoResponse
 
     public function getBundleBalances(): array;
 
+    public function getSupplementaryOfferings(): array;
+
     public function getUsages(): array;
 
     public function getActiveTimeLimit(): string;

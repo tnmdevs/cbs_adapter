@@ -58,6 +58,20 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $hasOneInList ? [$balanceResult] : $balanceResult;
     }
 
+    public function getSupplementaryOfferings(): array
+    {
+        if ($this->hasNoContent()) return [];
+
+        $hasOfferings = isset($this->content['Subscriber']['SupplementaryOffering']);
+
+        if (!$hasOfferings) return [];
+
+        $offerings=$this->content['Subscriber']['SupplementaryOffering'];
+        $hasOneInList = isset($offerings['OfferingKey']);
+
+        return $hasOneInList ? [$offerings] : $offerings;
+    }
+
     public function getUsages(): array
     {
         if ($this->hasNoContent()) return [];
@@ -137,6 +151,5 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
     {
         return $this->getAccountType() == CBS::ACCOUNT_TYPES['1'];
     }
-
 
 }

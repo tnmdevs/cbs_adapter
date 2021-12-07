@@ -21,6 +21,8 @@ class CustomerBalancesTest extends TestCase
         $this->assertEquals('381717', $result->getUnbilledAmount());
     }
 
+
+
     public function test_can_query_balances()
     {
         $stub = file_get_contents(__DIR__ . '/balances.xml');

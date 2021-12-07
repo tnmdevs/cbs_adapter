@@ -37,12 +37,21 @@ class CustomerInfoTest extends TestCase
         $this->assertEquals('101000001270210',$response->getAccountKey());
         $this->assertEquals('1',$response->getCustomerType());
 
+    }
 
+    public function test_get_customer_supp_offerings()
+    {
+        $this->app->bind(ICustomerInfoService::class, FakeCustomerInfoService::class);
+
+        $response = (new CustomerInfoClient('0888800900'))->query();
+
+        $this->assertCount(3,$response->getSupplementaryOfferings());
+
+        $this->assertEquals('221076',$response->getSupplementaryOfferings()[0]['OfferingKey']['OfferingID']);
     }
 
     public function test_get_customer_post_paid_credit_limit()
     {
-        $this->withoutExceptionHandling();
         $stub = file_get_contents(__DIR__.'/postpaid.response.xml');
         $result=(new CustomerInfoResponse('QueryCustomerInfoResultMsg','QueryCustomerInfoResult',$stub));
 

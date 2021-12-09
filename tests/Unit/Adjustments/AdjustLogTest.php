@@ -16,9 +16,33 @@ class AdjustLogTest extends TestCase
 
         $adjust = $result->getLogs();
 
-        $this->assertEquals(1, sizeof($adjust));
+        $this->assertEquals(2, sizeof($adjust));
 
         $this->assertEquals('100', $adjust[0]['BalanceAdjustmentInfo']['AdjustmentAmt']);
+    }
+
+    public function test_get_adjustment_type()
+    {
+        $stub = file_get_contents(__DIR__ . '/adjust.log.response.xml');
+        $result = (new AdjustLogResponse('QueryAdjustLogResultMsg', 'QueryAdjustLogResult', $stub));
+
+        $adjust = $result->getLogs()[0];
+
+        $this->assertEquals('CR', AdjustLogResponse::getAdjustmentType($adjust));
+    }
+
+    public function test_get_adjustment_amount()
+    {
+        $stub = file_get_contents(__DIR__ . '/adjust.log.response.xml');
+        $result = (new AdjustLogResponse('QueryAdjustLogResultMsg', 'QueryAdjustLogResult', $stub));
+
+        $adjust = $result->getLogs()[0];
+
+        $this->assertEquals(100, AdjustLogResponse::getAdjustmentAmount($adjust));
+
+        $adjustDR = $result->getLogs()[1];
+
+        $this->assertEquals(-100, AdjustLogResponse::getAdjustmentAmount($adjustDR));
     }
 
     public function test_can_query_adjustments()

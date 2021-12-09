@@ -8,5 +8,7 @@ interface IAdjustLogResponse
 {
     public function getLogs(): array;
 
-    public function getAdjustmentType(array $adjustment): string;
+    static function getAdjustmentType(array $adjustment): string;
+
+    static function getAdjustmentAmount(array $adjustment):int;
 }

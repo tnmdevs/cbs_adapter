@@ -30,7 +30,63 @@
                     <ars:DeptID>101</ars:DeptID>
                     <ars:DeptCode>101-001</ars:DeptCode>
                     <ars:Remark>tttttttt</ars:Remark>
-                    <ars:Reason>FUAREQ1</ars:Reason>
+                    <ars:Reason>CNTRYN</ars:Reason>
+                    <ars:AdditionalProperty>
+                        <arc:Code>FREE_UNIT_TYPE_ID</arc:Code>
+                        <arc:Value>1003</arc:Value>
+                    </ars:AdditionalProperty>
+                    <ars:AdditionalProperty>
+                        <arc:Code>OWNERID</arc:Code>
+                        <arc:Value>100000000000066104</arc:Value>
+                    </ars:AdditionalProperty>
+                    <ars:AdditionalProperty>
+                        <arc:Code>BEGIN_TIME</arc:Code>
+                        <arc:Value>2021-01-03 13:22:57.374</arc:Value>
+                    </ars:AdditionalProperty>
+                    <ars:AdditionalProperty>
+                        <arc:Code>NOTIFYFLAG</arc:Code>
+                        <arc:Value>0</arc:Value>
+                    </ars:AdditionalProperty>
+                    <ars:AdditionalProperty>
+                        <arc:Code>OWNERTYPE</arc:Code>
+                        <arc:Value>S</arc:Value>
+                    </ars:AdditionalProperty>
+                    <ars:AdditionalProperty>
+                        <arc:Code>C_OPER_TYPE</arc:Code>
+                        <arc:Value>1</arc:Value>
+                    </ars:AdditionalProperty>
+                    <ars:AdditionalProperty>
+                        <arc:Code>CREATE_TIME</arc:Code>
+                        <arc:Value>2021-01-03 13:22:57.374</arc:Value>
+                    </ars:AdditionalProperty>
+                    <ars:AdditionalProperty>
+                        <arc:Code>ADJOPERTYPE</arc:Code>
+                        <arc:Value>1</arc:Value>
+                    </ars:AdditionalProperty>
+                </ars:AdjustInfo>
+                <ars:AdjustInfo>
+                    <ars:TradeTime>20210103132257</ars:TradeTime>
+                    <ars:AcctKey>acct88810004</ars:AcctKey>
+                    <ars:SubKey>sub88810004</ars:SubKey>
+                    <ars:PrimaryIdentity>88810004</ars:PrimaryIdentity>
+                    <ars:ChannelID>4</ars:ChannelID>
+                    <ars:TransID>70119</ars:TransID>
+                    <ars:BalanceAdjustmentInfo>
+                        <ars:FreeUnitInstanceID>119000000000000014</ars:FreeUnitInstanceID>
+                        <ars:FreeUnitType>C_FREE_ITEMS_FOR_ONNET_SMS</ars:FreeUnitType>
+                        <ars:AdjustmentType>1</ars:AdjustmentType>
+                        <ars:AdjustmentAmt>100</ars:AdjustmentAmt>
+                        <ars:MeasureUnit>1101</ars:MeasureUnit>
+                        <ars:EffectiveTime>20210103132308</ars:EffectiveTime>
+                        <ars:ExpireTime>20210131032220</ars:ExpireTime>
+                        <ars:CurAmt>100</ars:CurAmt>
+                    </ars:BalanceAdjustmentInfo>
+                    <ars:OperID>101</ars:OperID>
+                    <ars:OperAccount>101</ars:OperAccount>
+                    <ars:DeptID>101</ars:DeptID>
+                    <ars:DeptCode>101-001</ars:DeptCode>
+                    <ars:Remark>tttttttt</ars:Remark>
+                    <ars:Reason>DNTRYN</ars:Reason>
                     <ars:AdditionalProperty>
                         <arc:Code>FREE_UNIT_TYPE_ID</arc:Code>
                         <arc:Value>1003</arc:Value>

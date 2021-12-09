@@ -16,6 +16,12 @@ class AdjustLogResponse extends CbsResponse implements IAdjustLogResponse
 
         $hasOne=isset($this->getContents()['AdjustInfo']['TransID']);
 
-        return $hasOne?[$this->getContents()['AdjustInfo']]:$this->getContents()['PaymentInfo'];
+        return $hasOne?[$this->getContents()['AdjustInfo']]:$this->getContents()['AdjustInfo'];
+    }
+
+    public function getAdjustmentType(array $adjustment): string
+    {
+//       TODO implement
+        return '';
     }
 }

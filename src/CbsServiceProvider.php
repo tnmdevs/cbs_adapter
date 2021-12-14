@@ -33,6 +33,8 @@ use TNM\CBS\Services\Me2U\IMe2UService;
 use TNM\CBS\Services\OneOffDeduction\IOneOffDeductionService;
 use TNM\CBS\Services\PaymentLog\IPaymentLogService;
 use TNM\CBS\Services\PaymentLog\PaymentLogService;
+use TNM\CBS\Services\QueryBill\IQueryBillService;
+use TNM\CBS\Services\QueryBill\QueryBillService;
 use TNM\CBS\Services\SubscriberValidity\ISubscriberValidityService;
 use TNM\CBS\Services\TotalUsage\ITotalUsageService;
 use TNM\CBS\Services\TotalUsage\TotalUsageService;
@@ -91,5 +93,6 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(IQueryCustomerBalancesService::class,QueryCustomerBalancesService::class);
         $this->app->bind(IConsumptionLimitService::class,ConsumptionLimitService::class);
         $this->app->bind(ITotalUsageService::class, TotalUsageService::class);
+        $this->app->bind(IQueryBillService::class, QueryBillService::class);
     }
 }

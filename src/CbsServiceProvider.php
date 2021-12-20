@@ -13,6 +13,8 @@ use TNM\CBS\Services\BundleSharing\ModifyBundleSharingRelationship\IModifyBundle
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingChildren\IQueryBundleSharingChildrenService;
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingParents\IQueryBundleSharingParentsService;
 use TNM\CBS\Services\BundleSubscription\IBundleSubscriptionService;
+use TNM\CBS\Services\BundleUnsubscription\BundleUnsubscriptionService;
+use TNM\CBS\Services\BundleUnsubscription\IBundleUnsubscriptionService;
 use TNM\CBS\Services\ConsumptionLimit\ConsumptionLimitService;
 use TNM\CBS\Services\ConsumptionLimit\IConsumptionLimitService;
 use TNM\CBS\Services\CustomerBalances\IQueryCustomerBalancesService;
@@ -94,5 +96,6 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(IConsumptionLimitService::class,ConsumptionLimitService::class);
         $this->app->bind(ITotalUsageService::class, TotalUsageService::class);
         $this->app->bind(IQueryBillService::class, QueryBillService::class);
+        $this->app->bind(IBundleUnsubscriptionService::class,BundleUnsubscriptionService::class);
     }
 }

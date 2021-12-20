@@ -15,7 +15,7 @@ class BundleUnsubscriptionClient implements ICBSClient
     public function __construct(string $msisdn, string $cbsCode)
     {
 
-        $this->msisdn = $msisdn;
+        $this->msisdn = msisdn($msisdn)->toCbsFormat();
         $this->cbsCode = $cbsCode;
         $this->service = app(IBundleUnsubscriptionService::class);
     }

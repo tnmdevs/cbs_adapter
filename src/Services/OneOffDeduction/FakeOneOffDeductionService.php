@@ -16,6 +16,6 @@ class FakeOneOffDeductionService extends CbsFakeService implements IOneOffDeduct
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/one.off.deduction.stub';
+        return 'stubs/one.off.deduction.stub.xml';
     }
 }

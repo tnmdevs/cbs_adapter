@@ -16,7 +16,7 @@ class UpdateAccountInfoService extends CbsService implements IUpdateAccountInfoS
 
     protected function getRequestStubPath(): string
     {
-        return "stubs/update.account.stub";
+        return "stubs/update.account.stub.xml";
     }
 
     protected function getRequestEndpoint(): string

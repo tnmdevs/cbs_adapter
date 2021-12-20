@@ -10,7 +10,7 @@ class OrgCustomerUpdateService extends CbsService implements IOrgCustomerUpdateS
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/update.org.customer.stub';
+        return 'stubs/update.org.customer.stub.xml';
     }
 
     protected function getResponseNamespace(): string

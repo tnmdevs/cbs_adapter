@@ -5,7 +5,6 @@ namespace TNM\CBS\Services\CustomerInfo;
 
 
 use TNM\CBS\Responses\CbsResponse;
-use TNM\CBS\Responses\CustomerInfo\CustomerInfoResponse;
 
 interface ICustomerInfoService
 {

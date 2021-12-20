@@ -8,7 +8,7 @@ class VoucherRechargeService extends CbsService implements IVoucherRechargeServi
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/voucher.recharge.stub';
+        return 'stubs/voucher.recharge.stub.xml';
     }
 
     protected function getResponseNamespace(): string

@@ -11,7 +11,7 @@ class BundleSubscriptionService extends CbsService implements IBundleSubscriptio
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/bundle.subscription.stub';
+        return 'stubs/bundle.subscription.stub.xml';
     }
 
     protected function getResponseNamespace(): string

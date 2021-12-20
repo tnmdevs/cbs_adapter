@@ -21,6 +21,15 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $hasAccountTag ? CBS::ACCOUNT_TYPES[$this->content['Account']['AcctInfo']['PaymentType']] : "";
     }
 
+    public function getAccountKey(): string
+    {
+        if ($this->hasNoContent()) return "";
+
+        $hasAccountTag = isset($this->content['Account']['AcctKey']);
+
+        return $hasAccountTag ? $this->content['Account']['AcctKey'] : "";
+    }
+
     public function getAccountBalances(): array
     {
         if ($this->hasNoContent()) return [];
@@ -49,6 +58,20 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $hasOneInList ? [$balanceResult] : $balanceResult;
     }
 
+    public function getSupplementaryOfferings(): array
+    {
+        if ($this->hasNoContent()) return [];
+
+        $hasOfferings = isset($this->content['Subscriber']['SupplementaryOffering']);
+
+        if (!$hasOfferings) return [];
+
+        $offerings=$this->content['Subscriber']['SupplementaryOffering'];
+        $hasOneInList = isset($offerings['OfferingKey']);
+
+        return $hasOneInList ? [$offerings] : $offerings;
+    }
+
     public function getUsages(): array
     {
         if ($this->hasNoContent()) return [];
@@ -62,19 +85,15 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $hasOneUsage ? [$usageList] : $usageList;
     }
 
-    public function getCreditLimit(): array
+    public function getCreditLimit(): ?array
     {
-        if (!$this->hasContent()) return [];
+        if (!$this->hasContent()) return null;
 
         $hasCreditLimit = isset($this->content['Subscriber']['AcctList']['AccountCredit']);
 
-        if (!$hasCreditLimit) return [];
+        if (!$hasCreditLimit) return null;
 
-        $creditLimit = $this->content['Subscriber']['AcctList']['AccountCredit'];
-
-        $hasOneRecord = isset($creditLimit['TotalCreditAmount']);
-
-        return $hasOneRecord ? [$creditLimit] : $creditLimit;
+        return  $this->content['Subscriber']['AcctList']['AccountCredit'];
     }
 
     public function getActiveTimeLimit(): string
@@ -103,4 +122,34 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
             ? new IndividualCustomer($customer)
             : new OrganisationCustomer($customer);
     }
+
+    public function getCustomerType(): string
+    {
+        if ($this->hasNoContent()) return "";
+
+        $hasTypeTag = isset($this->content['Customer']['CustInfo']['CustType']);
+
+        return $hasTypeTag ? $this->content['Customer']['CustInfo']['CustType'] : "";
+    }
+
+    public function isIndividual(): bool
+    {
+        return $this->getCustomerType() == array_flip(CBS::CUSTOMER_TYPE)['Individual'];
+    }
+
+    public function isOrganisation(): bool
+    {
+        return $this->getCustomerType() == array_flip(CBS::CUSTOMER_TYPE)['Organisation'];
+    }
+
+    public function isFamily(): bool
+    {
+        return $this->getCustomerType() == array_flip(CBS::CUSTOMER_TYPE)['Family'];
+    }
+
+    public function isPostPaid(): bool
+    {
+        return $this->getAccountType() == CBS::ACCOUNT_TYPES['1'];
+    }
+
 }

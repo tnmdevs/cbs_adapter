@@ -11,8 +11,10 @@ class InvoicesResponse extends CbsResponse implements IInvoicesResponse
 
     public function getInvoices(): array
     {
-        if ($this->hasNoContent()) return [];
+        if ($this->hasNoContent() || !isset($this->getContents()['InvoiceInfo'])) return [];
 
-        return isset($this->getContents()['PaymentInfo'])?$this->getContents()['PaymentInfo']:[];
+        $hasOne=isset($this->getContents()['InvoiceInfo']['InvoiceID']);
+
+        return $hasOne?[$this->getContents()['InvoiceInfo']]:$this->getContents()['InvoiceInfo'];
     }
 }

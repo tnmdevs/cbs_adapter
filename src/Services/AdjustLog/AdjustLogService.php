@@ -20,7 +20,7 @@ class AdjustLogService extends CbsService implements IAdjustLogService
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/query.adjust.log.stub';
+        return 'stubs/query.adjust.log.stub.xml';
     }
 
     protected function getRequestEndpoint(): string

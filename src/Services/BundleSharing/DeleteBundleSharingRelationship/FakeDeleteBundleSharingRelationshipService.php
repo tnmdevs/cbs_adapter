@@ -14,6 +14,6 @@ class FakeDeleteBundleSharingRelationshipService extends CbsFakeService implemen
     }
     protected function getRequestStubPath(): string
     {
-        return 'stubs/delete.bundle.sharing.relationship.stub';
+        return 'stubs/delete.bundle.sharing.relationship.stub.xml';
     }
 }

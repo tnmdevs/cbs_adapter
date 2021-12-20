@@ -1,0 +1,36 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <ars:QuerySumBalanceAndCreditResultMsg xmlns:ars="http://www.huawei.com/bme/cbsinterface/arservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:arc="http://cbs.huawei.com/ar/wsservice/arcommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+            <QuerySumBalanceAndCreditResult>
+                <ars:AcctKey>V4292101</ars:AcctKey>
+                <ars:BalanceResult>
+                    <arc:BalanceType>C_MAIN_BILLING_ACCOUNT</arc:BalanceType>
+                    <arc:BalanceTypeName>POS_MainAccount</arc:BalanceTypeName>
+                    <arc:TotalAmount>11000</arc:TotalAmount>
+                    <arc:DepositFlag>N</arc:DepositFlag>
+                    <arc:RefundFlag>1</arc:RefundFlag>
+                    <arc:CurrencyID>1102</arc:CurrencyID>
+                </ars:BalanceResult>
+                <ars:AccountCredit>
+                    <ars:CreditLimitType>C_INITIAL_CREDIT_LIMIT</ars:CreditLimitType>
+                    <ars:CreditLimitTypeName>FIRST DAY RECONNECTION</ars:CreditLimitTypeName>
+                    <ars:TotalCreditAmount>1000000</ars:TotalCreditAmount>
+                    <ars:TotalUsageAmount>671766</ars:TotalUsageAmount>
+                    <ars:TotalRemainAmount>328234</ars:TotalRemainAmount>
+                    <ars:CurrencyID>1102</ars:CurrencyID>
+                    <ars:NoLimitFlag>N</ars:NoLimitFlag>
+                </ars:AccountCredit>
+                <ars:UnbilledResult>
+                    <ars:ChargeAmount>381717</ars:ChargeAmount>
+                    <ars:CurrencyID>1102</ars:CurrencyID>
+                </ars:UnbilledResult>
+            </QuerySumBalanceAndCreditResult>
+        </ars:QuerySumBalanceAndCreditResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

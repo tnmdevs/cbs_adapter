@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bbs="http://www.huawei.com/bme/cbsinterface/bbservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bbc="http://www.huawei.com/bme/cbsinterface/bbcommon">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <bbs:QueryBillRequestMsg>
+            <RequestHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:BusinessCode>1</cbs:BusinessCode>
+                <cbs:MessageSeq>{{trans_id}}</cbs:MessageSeq>
+                <cbs:OwnershipInfo>
+                    <cbs:BEID>101</cbs:BEID>
+                </cbs:OwnershipInfo>
+                <cbs:AccessSecurity>
+                    <cbs:LoginSystemCode>{{username}}</cbs:LoginSystemCode>
+                    <cbs:Password>{{password}}</cbs:Password>
+                </cbs:AccessSecurity>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+            </RequestHeader>
+            <QueryBillRequest>
+                <bbs:AcctAccessCode>
+                    <bbc:PrimaryIdentity>{{msisdn}}</bbc:PrimaryIdentity>
+                </bbs:AcctAccessCode>
+                <bbs:BillCycleID>{{bill_cycle}}</bbs:BillCycleID>
+                <bbs:FlowType>1</bbs:FlowType>
+            </QueryBillRequest>
+        </bbs:QueryBillRequestMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -11,7 +11,7 @@ class SubscriberValidityService extends CbsService implements ISubscriberValidit
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/subscriber.validity.stub';
+        return 'stubs/subscriber.validity.stub.xml';
     }
 
     protected function getResponseNamespace(): string

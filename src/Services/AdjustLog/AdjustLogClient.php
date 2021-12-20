@@ -20,7 +20,7 @@ class AdjustLogClient implements ICBSClient
     {
         $this->msisdn = $msisdn;
         $this->start_time = $start_time??cbs_time(Carbon::now()->subMonths(3)->firstOfMonth());
-        $this->end_time = $end_time??cbs_time(Carbon::now());
+        $this->end_time = $end_time??cbs_time(Carbon::now()->addDay());
         $this->service = app(IAdjustLogService::class);
     }
 

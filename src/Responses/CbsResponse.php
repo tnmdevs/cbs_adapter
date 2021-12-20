@@ -10,7 +10,7 @@ use TNM\CBS\Utilities\ErrorMessageTransformer;
 class CbsResponse
 {
     protected ?string $response;
-    private array $prefixes = ['soapenv:', 'bcs:', 'bcc:', 'cbs:', 'ars:', 'arc:'];
+    private array $prefixes = ['soapenv:', 'bcs:', 'bcc:', 'cbs:', 'ars:', 'arc:','bbs:'];
     protected string $responseNamespace;
     protected string $contentTag;
     protected array $content;

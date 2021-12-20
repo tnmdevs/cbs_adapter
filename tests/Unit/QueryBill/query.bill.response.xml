@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bbs:QueryBillResultMsg xmlns:bbs="http://www.huawei.com/bme/cbsinterface/bbservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+            <QueryBillResult>
+                <bbs:Status>1</bbs:Status>
+                <bbs:FileNameList>
+                    <bbs:FileName>/onip/invbill288/fmt/BILLQUERY/20211101/593/V4291947_20211101_INV_00000356.pdf.gz</bbs:FileName>
+                </bbs:FileNameList>
+            </QueryBillResult>
+        </bbs:QueryBillResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

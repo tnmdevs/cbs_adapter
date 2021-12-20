@@ -9,7 +9,7 @@ class AddBundleSharingRelationshipService extends CbsService implements IAddBund
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/add.bundle.sharing.beneficiary.stub';
+        return 'stubs/add.bundle.sharing.beneficiary.stub.xml';
     }
 
     protected function getResponseNamespace(): string

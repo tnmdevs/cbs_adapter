@@ -11,7 +11,7 @@ class IndividualCustomerUpdateService extends CbsService implements IIndividualC
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/update.individual.customer.stub';
+        return 'stubs/update.individual.customer.stub.xml';
     }
 
     protected function getResponseNamespace(): string

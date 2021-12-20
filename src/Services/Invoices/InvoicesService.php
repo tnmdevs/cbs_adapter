@@ -20,7 +20,7 @@ class InvoicesService extends CbsService implements IInvoicesService
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/query.invoice.stub';
+        return 'stubs/query.invoice.stub.xml';
     }
 
     protected function getRequestEndpoint(): string

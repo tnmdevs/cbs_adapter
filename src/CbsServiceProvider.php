@@ -3,6 +3,8 @@
 namespace TNM\CBS;
 
 use Illuminate\Support\ServiceProvider;
+use TNM\CBS\Services\AdjustLog\AdjustLogService;
+use TNM\CBS\Services\AdjustLog\IAdjustLogService;
 use TNM\CBS\Services\AirtimeLoan\IAirtimeLoanService;
 use TNM\CBS\Services\AvailableOffers\IAvailableOffersService;
 use TNM\CBS\Services\BundleSharing\AddBundleSharingRelationship\IAddBundleSharingRelationshipService;
@@ -11,6 +13,12 @@ use TNM\CBS\Services\BundleSharing\ModifyBundleSharingRelationship\IModifyBundle
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingChildren\IQueryBundleSharingChildrenService;
 use TNM\CBS\Services\BundleSharing\QueryBundleSharingParents\IQueryBundleSharingParentsService;
 use TNM\CBS\Services\BundleSubscription\IBundleSubscriptionService;
+use TNM\CBS\Services\BundleUnsubscription\BundleUnsubscriptionService;
+use TNM\CBS\Services\BundleUnsubscription\IBundleUnsubscriptionService;
+use TNM\CBS\Services\ConsumptionLimit\ConsumptionLimitService;
+use TNM\CBS\Services\ConsumptionLimit\IConsumptionLimitService;
+use TNM\CBS\Services\CustomerBalances\IQueryCustomerBalancesService;
+use TNM\CBS\Services\CustomerBalances\QueryCustomerBalancesService;
 use TNM\CBS\Services\CustomerCreation\IIndividualCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IndividualCustomerCreationService;
 use TNM\CBS\Services\CustomerCreation\IOrgCustomerCreationService;
@@ -20,10 +28,18 @@ use TNM\CBS\Services\CustomerUpdate\IIndividualCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\IndividualCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\IOrgCustomerUpdateService;
 use TNM\CBS\Services\CustomerUpdate\OrgCustomerUpdateService;
+use TNM\CBS\Services\Invoices\IInvoicesService;
+use TNM\CBS\Services\Invoices\InvoicesService;
 use TNM\CBS\Services\LoanInfo\ILoanInfoService;
 use TNM\CBS\Services\Me2U\IMe2UService;
 use TNM\CBS\Services\OneOffDeduction\IOneOffDeductionService;
+use TNM\CBS\Services\PaymentLog\IPaymentLogService;
+use TNM\CBS\Services\PaymentLog\PaymentLogService;
+use TNM\CBS\Services\QueryBill\IQueryBillService;
+use TNM\CBS\Services\QueryBill\QueryBillService;
 use TNM\CBS\Services\SubscriberValidity\ISubscriberValidityService;
+use TNM\CBS\Services\TotalUsage\ITotalUsageService;
+use TNM\CBS\Services\TotalUsage\TotalUsageService;
 use TNM\CBS\Services\UpdateAccountInfo\IUpdateAccountInfoService;
 use TNM\CBS\Services\UpdateAccountInfo\UpdateAccountInfoService;
 use TNM\CBS\Services\VoucherRecharge\IVoucherRechargeService;
@@ -73,5 +89,13 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(IOrgCustomerUpdateService::class,OrgCustomerUpdateService::class);
         $this->app->bind(IIndividualCustomerUpdateService::class,IndividualCustomerUpdateService::class);
         $this->app->bind(IUpdateAccountInfoService::class,UpdateAccountInfoService::class);
+        $this->app->bind(IInvoicesService::class,InvoicesService::class);
+        $this->app->bind(IPaymentLogService::class,PaymentLogService::class);
+        $this->app->bind(IAdjustLogService::class,AdjustLogService::class);
+        $this->app->bind(IQueryCustomerBalancesService::class,QueryCustomerBalancesService::class);
+        $this->app->bind(IConsumptionLimitService::class,ConsumptionLimitService::class);
+        $this->app->bind(ITotalUsageService::class, TotalUsageService::class);
+        $this->app->bind(IQueryBillService::class, QueryBillService::class);
+        $this->app->bind(IBundleUnsubscriptionService::class,BundleUnsubscriptionService::class);
     }
 }

@@ -20,6 +20,6 @@ class FakeLoanInfoService extends CbsFakeService implements ILoanInfoService
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/loan.info.stub';
+        return 'stubs/loan.info.stub.xml';
     }
 }

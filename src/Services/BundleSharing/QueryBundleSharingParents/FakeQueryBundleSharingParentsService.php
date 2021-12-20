@@ -11,7 +11,7 @@ class FakeQueryBundleSharingParentsService extends CbsFakeService implements IQu
 
     protected function getRequestStubPath(): string
     {
-        return 'stubs/query.bundle.sharing.parents.stub';
+        return 'stubs/query.bundle.sharing.parents.stub.xml';
     }
     protected function getResponseNamespace(): string
     {

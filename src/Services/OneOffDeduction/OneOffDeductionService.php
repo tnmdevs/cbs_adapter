@@ -10,7 +10,7 @@ class OneOffDeductionService extends CbsService implements IOneOffDeductionServi
 {
     protected function getRequestStubPath(): string
     {
-        return 'stubs/one.off.deduction.stub';
+        return 'stubs/one.off.deduction.stub.xml';
     }
 
     protected function getResponseNamespace(): string

@@ -13,4 +13,9 @@ class AvailableOffersResponse extends CbsResponse implements IAvailableOffersRes
 
         return isset($this->getContents()['OfferingInfo']) ? $this->getContents()['OfferingInfo'] : [];
     }
+
+    public function hasOffer(string $offerId): bool
+    {
+        return collect($this->getOffers())->map(fn(array $offer) => $offer['OfferingCode'])->contains($offerId);
+    }
 }

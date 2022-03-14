@@ -10,7 +10,8 @@ abstract class CBSBaseService
     private array $doNotSanitize=[
         'username',
         'password',
-        'voucher'
+        'voucher',
+        'properties'
     ];
     abstract protected function getRequestStubPath(): string;
 

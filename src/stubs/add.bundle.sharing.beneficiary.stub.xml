@@ -41,6 +41,7 @@
                   {{comment_share_limit_end}}
                   <!--<bcc:StartTime>{{start_time}}</bcc:StartTime>-->
                   <bcc:EndTime>{{end_time}}</bcc:EndTime>
+                  <bcc:Priority>48</bcc:Priority>
                </bcs:AddRelation>
             </bcs:RscRelation>
          </ChangeRscRelationRequest>

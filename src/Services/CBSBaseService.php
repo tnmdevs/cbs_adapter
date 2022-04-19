@@ -7,12 +7,13 @@ use TNM\CBS\Responses\CbsResponse;
 
 abstract class CBSBaseService
 {
-    private array $doNotSanitize=[
+    private array $doNotSanitize = [
         'username',
         'password',
         'voucher',
         'properties'
     ];
+
     abstract protected function getRequestStubPath(): string;
 
     abstract protected function getResponseNamespace(): string;
@@ -26,11 +27,11 @@ abstract class CBSBaseService
 
     protected function sanitize(string $placeholder, ?string $value): string
     {
-        if(in_array($placeholder,$this->doNotSanitize)) return $value;
+        if (in_array($placeholder, $this->doNotSanitize)) return $value;
 
-        if(preg_match('/^(comment)/',$placeholder)) return $value;
+        if (preg_match('/^(comment)/', $placeholder)) return $value;
 
-        return $value?preg_replace($this->getReplacePattern($placeholder), '', $value):'';
+        return $value ? preg_replace($this->getReplacePattern($placeholder), '', $value) : '';
     }
 
     protected function getReplacePattern(string $pattern): string
@@ -49,10 +50,10 @@ abstract class CBSBaseService
             'email' => 'is_valid_email'
         ];
 
-        if(isset($validations[$placeholder]) && function_exists($validations[$placeholder])){
+        if (isset($validations[$placeholder]) && function_exists($validations[$placeholder])) {
             return call_user_func($validations[$placeholder], $value) ? $value : '';
         }
-        return  $value;
+        return $value;
     }
 
     protected function getRequestBody(array $attributes): string
@@ -65,7 +66,7 @@ abstract class CBSBaseService
         ], $attributes);
 
         foreach ($attributes as $placeholder => $value) {
-                 $value = $this->validate($placeholder, $this->sanitize($placeholder, $value));
+            $value = $this->validate($placeholder, $this->sanitize($placeholder, $value));
 
             $stub = str_replace(sprintf('{{%s}}', $placeholder), $value, $stub);
         }

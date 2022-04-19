@@ -12,14 +12,14 @@ class BundleSubscriptionClient implements ICBSClient
     private IBundleSubscriptionService $service;
     private string $msisdn;
     private string $bundleId;
-    private ?bool $gift;
+    private ?string $originatorFlag;
 
-    public function __construct(string $msisdn, string $bundleId, ?bool $gift = false)
+    public function __construct(string $msisdn, string $bundleId, ?string $originatorFlag = null)
     {
         $this->msisdn = $msisdn;
         $this->bundleId = $bundleId;
         $this->service = app(IBundleSubscriptionService::class);
-        $this->gift = $gift;
+        $this->originatorFlag = $originatorFlag;
     }
 
     public function query(): BundleSubscriptionResponse
@@ -36,13 +36,13 @@ class BundleSubscriptionClient implements ICBSClient
 
     private function getProperties(): string
     {
-        if (!$this->gift) return '';
+        if (!$this->originatorFlag) return '';
 
         return
-            '<bcc:OInstProperty>
+            sprintf('<bcc:OInstProperty>
                  <bcc:PropCode>CN_SUBSCRIBE_PARTY</bcc:PropCode>
                  <bcc:PropType>1</bcc:PropType>
-                 <bcc:Value>GIFT</bcc:Value>
-             </bcc:OInstProperty>';
+                 <bcc:Value>%s</bcc:Value>
+             </bcc:OInstProperty>', $this->originatorFlag);
     }
 }

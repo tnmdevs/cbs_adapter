@@ -9,9 +9,11 @@ class AvailableOffersResponse extends CbsResponse implements IAvailableOffersRes
 {
     public function getOffers(): array
     {
-        if ($this->hasNoContent()) return [];
+        if ($this->hasNoContent() || !isset($this->getContents()['OfferingInfo'])) return [];
 
-        return isset($this->getContents()['OfferingInfo']) ? $this->getContents()['OfferingInfo'] : [];
+        return isset($this->getContents()['OfferingInfo'][0])
+            ? $this->getContents()['OfferingInfo']
+            : [$this->getContents()['OfferingInfo']];
     }
 
     public function hasOffer(string $offerId): bool

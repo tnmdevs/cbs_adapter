@@ -57,6 +57,6 @@ class CBS
         'The value  of FreeUnitType transferred does not exist.'=>'Transferred value is insufficient',
         'In the transfer information, the transfer-in and transfer-out accounts are the same and the transfer-in account book type is the same as the transfer-out account book type.'=>'Cannot transfer to same number',
         "Loan application failed because the subscriber's service activity period is shorter than the preset threshold."=>"Loan application failed because the service activity period is shorter",
-        "Supplementary offerings  and  are exclusive with each other. The offerings cannot have subscription instances for the same period."=>"You have already subscribed to this service"
+        "Supplementary offerings  and  are exclusive with each other. The offerings cannot have subscription instances for the same period."=>"You already have an active Pamtsetse bundle"
     ];
 }

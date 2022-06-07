@@ -163,6 +163,6 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
                 return $record['BalanceType'] === 'C_MAIN_ACCOUNT' || $record['BalanceType'] === 'C_MAIN_BILLING_ACCOUNT';
             });
 
-        return round($mainAccountBalance['TotalAmount'] / 2, 2);
+        return round($mainAccountBalance['TotalAmount'] / 100, 2);
     }
 }

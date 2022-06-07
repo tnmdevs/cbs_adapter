@@ -23,6 +23,8 @@ interface ICustomerInfoResponse
 
     public function getAccountBalances(): array;
 
+    public function getMainAccountBalance(): float;
+
     public function getBundleBalances(): array;
 
     public function getSupplementaryOfferings(): array;

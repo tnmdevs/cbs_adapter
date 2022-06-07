@@ -36,7 +36,7 @@ class BundleSubscriptionClient implements ICBSClient
 
     private function getProperties(): string
     {
-        if (!$this->originatorFlag) return '';
+        if (is_null($this->originatorFlag)) return '';
 
         return
             sprintf('<bcc:OInstProperty>

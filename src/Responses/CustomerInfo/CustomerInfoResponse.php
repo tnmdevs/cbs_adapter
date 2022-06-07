@@ -66,7 +66,7 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 
         if (!$hasOfferings) return [];
 
-        $offerings=$this->content['Subscriber']['SupplementaryOffering'];
+        $offerings = $this->content['Subscriber']['SupplementaryOffering'];
         $hasOneInList = isset($offerings['OfferingKey']);
 
         return $hasOneInList ? [$offerings] : $offerings;
@@ -93,7 +93,7 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
 
         if (!$hasCreditLimit) return null;
 
-        return  $this->content['Subscriber']['AcctList']['AccountCredit'];
+        return $this->content['Subscriber']['AcctList']['AccountCredit'];
     }
 
     public function getActiveTimeLimit(): string
@@ -152,4 +152,17 @@ class CustomerInfoResponse extends CbsResponse implements ICustomerInfoResponse
         return $this->getAccountType() == CBS::ACCOUNT_TYPES['1'];
     }
 
+    public function getMainAccountBalance(): float
+    {
+        $balances = $this->getAccountBalances();
+
+        if (empty($balances)) return 0;
+
+        $mainAccountBalance = collect($balances)
+            ->first(function (array $record) {
+                return $record['BalanceType'] === 'C_MAIN_ACCOUNT' || $record['BalanceType'] === 'C_MAIN_BILLING_ACCOUNT';
+            });
+
+        return round($mainAccountBalance['TotalAmount'] / 2, 2);
+    }
 }

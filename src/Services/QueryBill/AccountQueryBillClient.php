@@ -21,7 +21,7 @@ class AccountQueryBillClient
     {
         return $this->service->query([
             'msisdn' => $this->account,
-            'account'=>sprintf('<bbc:AccountCode>%s</bbc:AccountCode',msisdn($this->account)->toCbsFormat()),
+            'account'=>sprintf('<bbc:AccountCode>%s</bbc:AccountCode>',$this->account),
             'bill_cycle' => $this->bill_cycle
         ],QueryBillResponse::class);
     }

@@ -17,9 +17,7 @@
                   </RequestHeader>
          <QueryInvoiceRequest>
             <ars:AcctAccessCode>
-
-               <arc:PrimaryIdentity>{{msisdn}}</arc:PrimaryIdentity>
-
+                {{account}}
             </ars:AcctAccessCode>
 
             <ars:TimePeriod>

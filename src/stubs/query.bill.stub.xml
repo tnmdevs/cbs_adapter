@@ -17,7 +17,7 @@
             </RequestHeader>
             <QueryBillRequest>
                 <bbs:AcctAccessCode>
-                    <bbc:PrimaryIdentity>{{msisdn}}</bbc:PrimaryIdentity>
+                    {{account}}
                 </bbs:AcctAccessCode>
                 <bbs:BillCycleID>{{bill_cycle}}</bbs:BillCycleID>
                 <bbs:FlowType>1</bbs:FlowType>

@@ -11,7 +11,8 @@ abstract class CBSBaseService
         'username',
         'password',
         'voucher',
-        'properties'
+        'properties',
+        'account'
     ];
 
     abstract protected function getRequestStubPath(): string;

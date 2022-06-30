@@ -1,0 +1,44 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <ars:QueryTotalBalanceResultMsg xmlns:ars="http://www.huawei.com/bme/cbsinterface/arservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>0</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2003</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+            </ResultHeader>
+            <QueryTotalBalanceResult>
+                <ars:BalanceList>
+                    <ars:OutStandingAmount>0</ars:OutStandingAmount>
+                    <ars:Prepayment>0</ars:Prepayment>
+                    <ars:AvailableCreditLimit>0</ars:AvailableCreditLimit>
+                    <ars:PendingAmount>0</ars:PendingAmount>
+                    <ars:DepositAmount>0</ars:DepositAmount>
+                    <ars:DisputedAmount>0</ars:DisputedAmount>
+                    <ars:UnbilledAmount>0</ars:UnbilledAmount>
+                    <ars:LateFee>0</ars:LateFee>
+                    <ars:OutStandingDepositAmount>0</ars:OutStandingDepositAmount>
+                    <ars:OverDueAmount>0</ars:OverDueAmount>
+                    <ars:CurrencyID>1153</ars:CurrencyID>
+                    <ars:CreditNoLimitFlag>Y</ars:CreditNoLimitFlag>
+                </ars:BalanceList>
+                <ars:BalanceList>
+                    <ars:OutStandingAmount>6845201</ars:OutStandingAmount>
+                    <ars:Prepayment>0</ars:Prepayment>
+                    <ars:AvailableCreditLimit>-1</ars:AvailableCreditLimit>
+                    <ars:PendingAmount>0</ars:PendingAmount>
+                    <ars:DepositAmount>0</ars:DepositAmount>
+                    <ars:DisputedAmount>0</ars:DisputedAmount>
+                    <ars:UnbilledAmount>1031700</ars:UnbilledAmount>
+                    <ars:LateFee>0</ars:LateFee>
+                    <ars:OutStandingDepositAmount>0</ars:OutStandingDepositAmount>
+                    <ars:OverDueAmount>6845201</ars:OverDueAmount>
+                    <ars:CurrencyID>1102</ars:CurrencyID>
+                    <ars:CreditNoLimitFlag>Y</ars:CreditNoLimitFlag>
+                </ars:BalanceList>
+                <ars:AccountKey>V0011697</ars:AccountKey>
+                <ars:AccountCode>V0011697</ars:AccountCode>
+            </QueryTotalBalanceResult>
+        </ars:QueryTotalBalanceResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>

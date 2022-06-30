@@ -6,6 +6,10 @@ namespace TNM\CBS\Utilities;
 
 class CBS
 {
+    const CURRENCY=[
+        '1102'=>'MWK'
+    ];
+
     const CUSTOMER_TYPE=[
         '1'=>'Individual',
         '2'=>'Organisation',

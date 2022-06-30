@@ -3,6 +3,8 @@
 namespace TNM\CBS;
 
 use Illuminate\Support\ServiceProvider;
+use TNM\CBS\Services\AccountBalance\AccountBalanceService;
+use TNM\CBS\Services\AccountBalance\IAccountBalanceService;
 use TNM\CBS\Services\AdjustLog\AdjustLogService;
 use TNM\CBS\Services\AdjustLog\IAdjustLogService;
 use TNM\CBS\Services\AirtimeLoan\IAirtimeLoanService;
@@ -97,5 +99,6 @@ class CbsServiceProvider extends ServiceProvider
         $this->app->bind(ITotalUsageService::class, TotalUsageService::class);
         $this->app->bind(IQueryBillService::class, QueryBillService::class);
         $this->app->bind(IBundleUnsubscriptionService::class,BundleUnsubscriptionService::class);
+        $this->app->bind(IAccountBalanceService::class,AccountBalanceService::class);
     }
 }
